@@ -1,0 +1,18 @@
+version: '3.8'
+
+#write a docker compose file for a postgres database
+services:
+  sqldb:
+    container_name: sqldb
+    image: postgres:alpine
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: db
+    ports:
+      - "5432:5432"
+    volumes:
+      - sqldb_data:/var/lib/postgresql/data
+
+volumes:
+  sqldb_data:
