@@ -2,6 +2,15 @@ version: '3.8'
 
 #write a docker compose file for a postgres database
 services:
+  frontend:
+    container_name: frontend
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+
   sqldb:
     container_name: sqldb
     image: postgres:alpine
