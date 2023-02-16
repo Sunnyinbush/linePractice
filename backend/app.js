@@ -1,38 +1,70 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const request = require('request')
+const https = require("https")
+const express = require("express")
 const app = express()
-const port = process.env.PORT || 4000
+const PORT = process.env.PORT || 4000
+const TOKEN = "vqiiCUBQCIZS0AJwgAunwn47nyFlDemUcsx9fr7SPXIQmXIlbg17N5hm0z+zo1Kcgges2TvHcKRoDuKBFiF0rAHuqE7TBQNYFlk1Q+Mkq2UyymeyWA249Abektv8lnES71cNhVO1LdOQiqsX/kx5ywdB04t89/1O/w1cDnyilFU="
 
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+app.use(express.json())
+app.use(express.urlencoded({
+  extended: true
+}))
 
-app.post('/webhook', (req, res) => {
-    let reply_token = req.body.events[0].replyToken
-    let msg = req.body.events[0].message.text
-    reply(reply_token, msg)
-    res.sendStatus(200)
+app.get("/", (req, res) => {
+  res.sendStatus(200)
 })
-app.listen(port)
 
-function reply(reply_token, msg) {
-    let headers = {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer {vqiiCUBQCIZS0AJwgAunwn47nyFlDemUcsx9fr7SPXIQmXIlbg17N5hm0z+zo1Kcgges2TvHcKRoDuKBFiF0rAHuqE7TBQNYFlk1Q+Mkq2UyymeyWA249Abektv8lnES71cNhVO1LdOQiqsX/kx5ywdB04t89/1O/w1cDnyilFU=}'
-    }
-    let body = JSON.stringify({
-        replyToken: reply_token,
-        messages: [{
-            type: 'text',
-            text: msg
-        }]
+app.post("/webhook", function(req, res) {
+  res.send("HTTP POST request sent to the webhook URL!")
+  // If the user sends a message to your bot, send a reply message
+  if (req.body.events[0].type === "message") {
+    // Message data, must be stringified
+    const dataString = JSON.stringify({
+      replyToken: req.body.events[0].replyToken,
+      messages: [
+        {
+          "type": "text",
+          "text": "Hello, user"
+        },
+        {
+          "type": "text",
+          "text": "May I help you?"
+        }
+      ]
     })
 
-    request.post({
-        url: 'https://api.line.me/v2/bot/message/reply',
-        headers: headers,
-        body: body
-    }, (err, res, body) => {
-        console.log('status = ' + res.statusCode);
-    });
-}
+    // Request header
+    const headers = {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer " + TOKEN
+    }
+
+    // Options to pass into the request
+    const webhookOptions = {
+      "hostname": "api.line.me",
+      "path": "/v2/bot/message/reply",
+      "method": "POST",
+      "headers": headers,
+      "body": dataString
+    }
+
+    // Define request
+    const request = https.request(webhookOptions, (res) => {
+      res.on("data", (d) => {
+        process.stdout.write(d)
+      })
+    })
+
+    // Handle error
+    request.on("error", (err) => {
+      console.error(err)
+    })
+
+    // Send data
+    request.write(dataString)
+    request.end()
+  }
+})
+
+app.listen(PORT, () => {
+  console.log(`Example app listening at http://localhost:${PORT}`)
+})
