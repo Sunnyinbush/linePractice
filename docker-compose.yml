@@ -2,6 +2,22 @@ version: '3.8'
 
 #write a docker compose file for a postgres database
 services:
+
+  jsonserver:
+    container_name: jsonserver
+    build: ./jsonServer
+    ports:
+      - '9000:9000'
+    volumes:
+      - ./db.json:/data/db.json
+
+  backend:
+    container_name: backend
+    build: ./backend
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+
   frontend:
     container_name: frontend
     build: ./frontend
