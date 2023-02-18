@@ -1,11 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import Filtered from './filtered';
 
 function App() {
   return (
-    <div className="App">
-      <p>Start </p>
-    </div>
+
+    <Router>
+          <div className="App">
+
+
+        <Filtered/>
+
+       </div>
+
+
+    </Router>
+
   );
 }
 
