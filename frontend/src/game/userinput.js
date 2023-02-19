@@ -1,8 +1,10 @@
 import React from 'react'
 import mainLogo from'./KrD_log.png';
 import topimg from './top_image.png'
+import botimg from './bottom.png'
 import './main.css';
 import  './userinput.css'
+
 import { Container,Row ,Button} from 'react-bootstrap';
 
 export default function Userinput() {
@@ -29,14 +31,18 @@ export default function Userinput() {
 
       <Container>
         <div class='box'>
-
+          <Row>
           <p>ระยะเวลาที่คุณมี</p>
 
-          <div class="slidecontainer">
-            <input type="range" min="1" max="100" value="50" class="slider" />
+        <div class="slidecontainer">
+          <input type="range" min="1" max="100" value="50" class="slider" />
 
-          </div>
+        </div>
 
+
+            
+          </Row>
+   
 
         </div>
         </Container>
@@ -46,6 +52,14 @@ export default function Userinput() {
         < div class='seacrh'>
           <Button> Click</Button>
         </div>
+
+
+        <Container>
+          <div class='center'>
+              <img src={botimg} class='bot'/>
+        
+          </div>
+        </Container>
       
         
     </div>
