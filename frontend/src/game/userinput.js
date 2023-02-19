@@ -19,7 +19,7 @@ export default function Userinput() {
       <Toppage/>
 
       <Container sm={12}>
-        <div className='center'>
+        <div className='box_center'>
         <div className='box'>
           <Row >
               <div className='custom'>           
