@@ -29,7 +29,7 @@ export default function Userinput() {
      
 
 
-      <Container>
+      <Container xl={12}>
         <div class='box'>
           <Row>
           <p>ระยะเวลาที่คุณมี</p>
@@ -39,8 +39,24 @@ export default function Userinput() {
 
         </div>
 
+          </Row>
+          <Row>
+          <p>ระยะเวลาที่คุณมี</p>
 
-            
+        <div class="slidecontainer">
+          <input type="range" min="1" max="100" value="50" class="slider" />
+
+        </div>
+
+          </Row>
+          <Row>
+          <p>สถานที</p>
+
+          <div class="slidecontainer">
+            <input type="text"/>
+
+          </div>
+
           </Row>
    
 

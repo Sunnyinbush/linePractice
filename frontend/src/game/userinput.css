@@ -1,6 +1,7 @@
 .slidecontainer {
     width: 80%;
     margin: auto;
+
   }
   
   .slider {
@@ -54,4 +55,8 @@
 .search{
     margin: auto;
     align-items: center;
+}
+
+.row{
+    max-height: 60px;
 }
