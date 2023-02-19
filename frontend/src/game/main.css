@@ -33,7 +33,7 @@ h1{
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  margin-top: -300px; /* adjust this value as needed */
+  margin-top: -250px; /* adjust this value as needed */
 }
 
 .center {
