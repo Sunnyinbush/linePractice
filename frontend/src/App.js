@@ -1,7 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
+
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import Filtered from './filtered';
+
+import Userinput from './game/userinput';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
           <div className="App">
 
 
-        <Filtered/>
+        <Userinput/>
 
        </div>
 
