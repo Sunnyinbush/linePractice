@@ -59,6 +59,12 @@ export default function Userinput() {
         
 
       
+<<<<<<< HEAD
+=======
+        < div className='seacrh'>
+          <button> Click</button>
+        </div>
+>>>>>>> Pun-staticweb
 
 
 
