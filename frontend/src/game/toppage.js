@@ -1,19 +1,25 @@
 import React from 'react'
 import mainLogo from'../image/KrD_log.png';
-import topimg from '../image/top_image.png'
+import topimg from '../image/top_image.png';
+import botimg from '../image/bottom.png'
 
 
 export default function Toppage() {
   return (
     <div>      
    
-    <div className='center'>
-      <img src={topimg} className='top' alt={topimg}/>
-    <div className='Logo absolute top-10 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 mt-170'>
-        <img  src={mainLogo} className='w-159' alt={mainLogo}/>
+    <div className='justify-center flex '>
+    
+      <div className='justify-center max-w-screen-lg mx-auto pb-10' >
+        <img src={topimg} className='absolute top-16 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-35 w-50 ' alt={topimg}/>
+
+       <img  src={mainLogo} className='h-40 w-35 mt-10' alt={mainLogo}/>
+
+       <h1 className='font-medium text-2xl text-krd relative -mt-5 text-center'>โหมดทันใจ</h1>
       </div>
-       
-       <h1 className='font-medium text-2xl text-red-500 relative -mt-20 text-center'>โหมดทันใจ</h1>
+      
+     
+        
       
     </div>
 

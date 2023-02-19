@@ -17,42 +17,42 @@ export default function Userinput() {
       
       <Toppage/>
 
-        <div className='box_center'>
-        <div className='box'>
+        <div className='flex item-center justify-center allign-center w-60%'>
+          <div className='box'>
 
-              <div className='custom'>           
-              <img src={clock} alt={clock} className="icon"/>
-              <p>ระยะเวลาที่คุณมี</p>
-             </div>
- 
-            <div className="slidecontainer">
-              <input type="range" min="1" max="100" value="50" className="slider" />
-            </div>
-
-
-
-              <div className='custom'>           
-                <img src={price} alt={clock} className="icon"/>
+                <div className='custom'>           
+                <img src={clock} alt={clock} className=""/>
                 <p>ระยะเวลาที่คุณมี</p>
               </div>
-        
+  
               <div className="slidecontainer">
                 <input type="range" min="1" max="100" value="50" className="slider" />
               </div>
 
 
 
-            <div className='custom'>           
-                <img src={location} alt={clock} className="icon"/>
-                <p>สถานที่</p>
-            </div>
-            <div className="search">
-              <input type="text"/>
-            </div>
+                <div className='custom'>           
+                  <img src={price} alt={clock} className=""/>
+                  <p>ระยะเวลาที่คุณมี</p>
+                </div>
+          
+                <div className="slidecontainer">
+                  <input type="range" min="1" max="100" value="50" className="slider" />
+                </div>
 
 
 
-        </div>
+              <div className='custom'>           
+                  <img src={location} alt={clock} className=""/>
+                  <p>สถานที่</p>
+              </div>
+              <div className="search">
+                <input type="text"/>
+              </div>
+
+
+
+          </div>
 
 
         </div>
@@ -62,8 +62,8 @@ export default function Userinput() {
 
 
 
-          <div className='center'>
-              <img src={botimg} className='bot' alt={botimg}/>
+          <div className='justify-center max-w-screen-lg mx-auto pb-10'>
+              <img src={botimg} className='absolute  mt-10' alt={botimg}/>
           </div>
 
         
