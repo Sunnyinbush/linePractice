@@ -1,10 +1,12 @@
 import React from 'react'
-import mainLogo from'../image/KrD_log.png';
-import topimg from '../image/top_image.png'
+
 import botimg from '../image/bottom.png'
+import clock from '../image/clock.png'
+import location from '../image/location.png'
+import price from '../image/price.png'
 import './main.css';
 import  './userinput.css'
-
+import Toppage from './toppage';
 import { Container,Row ,Button} from 'react-bootstrap';
 
 export default function Userinput() {
@@ -14,66 +16,62 @@ export default function Userinput() {
   return (
     <div >
       
-      <Container>
-      <div class='center'>
-        <img src={topimg} class='top'/>
-         <img  src={mainLogo} class='Logo' />
+      <Toppage/>
 
+      <Container sm={12}>
+        <div className='center'>
+        <div className='box'>
+          <Row >
+              <div className='custom'>           
+              <img src={clock} alt={clock} className="icon"/>
+              <p>ระยะเวลาที่คุณมี</p>
+             </div>
+ 
+            <div className="slidecontainer">
+              <input type="range" min="1" max="100" value="50" className="slider" />
+            </div>
+          </Row>
 
-      </div>
-      <Row>
-        <h1>โหมดทันใจ</h1>
-      </Row>
-
-      </Container>
-     
-
-
-      <Container xl={12}>
-        <div class='box'>
-          <Row>
-          <p>ระยะเวลาที่คุณมี</p>
-
-        <div class="slidecontainer">
-          <input type="range" min="1" max="100" value="50" class="slider" />
-
-        </div>
+          <Row>  
+              <div className='custom'>           
+                <img src={price} alt={clock} className="icon"/>
+                <p>ระยะเวลาที่คุณมี</p>
+              </div>
+        
+              <div className="slidecontainer">
+                <input type="range" min="1" max="100" value="50" className="slider" />
+              </div>
 
           </Row>
+
           <Row>
-          <p>ระยะเวลาที่คุณมี</p>
-
-        <div class="slidecontainer">
-          <input type="range" min="1" max="100" value="50" class="slider" />
-
-        </div>
-
-          </Row>
-          <Row>
-          <p>สถานที</p>
-
-          <div class="slidecontainer">
-            <input type="text"/>
-
-          </div>
+            <div className='custom'>           
+                <img src={location} alt={clock} className="icon"/>
+                <p>สถานที่</p>
+            </div>
+            <div className="search">
+              <input type="text"/>
+            </div>
 
           </Row>
    
 
         </div>
+
+
+        </div>
+        
         </Container>
      
-
       
-        < div class='seacrh'>
+        < div className='seacrh'>
           <Button> Click</Button>
         </div>
 
 
         <Container>
-          <div class='center'>
-              <img src={botimg} class='bot'/>
-        
+          <div className='center'>
+              <img src={botimg} className='bot' alt={botimg}/>
           </div>
         </Container>
       

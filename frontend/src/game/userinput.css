@@ -38,25 +38,47 @@
     cursor: pointer;
   }
 .box{
-    width: 374px;
+    width: 400px;
     height: 269px;
     background-color: rgba(255, 249, 228, 1);
     margin: auto;
     margin-top: 5%;
+    margin-left: 20px;
     border-radius: 20px;
   }
 
 .box p{
-    margin-left: 30px ;
-    padding-top: 20px;
+    margin-left: 10px ;
+    padding-top: 10px;
+    color: rgba(119, 124, 182, 1);
+
     
 }
 
 .search{
-    margin: auto;
-    align-items: center;
+    text-align: center;
+    margin:0;
+    width: 100%;
+}
+.search input{
+    width: 80%;
 }
 
 .row{
-    max-height: 60px;
+    max-height: 70px;
+    
+}
+.icon{
+    width: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding-left: 20px;
+    
+}
+
+.custom{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+
 }
