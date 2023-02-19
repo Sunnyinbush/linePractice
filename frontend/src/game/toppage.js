@@ -1,7 +1,6 @@
 import React from 'react'
 import mainLogo from'../image/KrD_log.png';
 import topimg from '../image/top_image.png';
-import botimg from '../image/bottom.png'
 
 
 export default function Toppage() {

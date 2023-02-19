@@ -8,7 +8,8 @@ module.exports = {
     extend: {
       colors:{
 
-        'krd' : 'rgba(239, 125, 82, 1)'
+        'krd' : 'rgba(239, 125, 82, 1)',
+        'box' : ' rgba(255, 249, 228, 1)'
 
       },
     },
