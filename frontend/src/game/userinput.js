@@ -59,9 +59,6 @@ export default function Userinput() {
         
 
       
-        < div className='seacrh'>
-          <button> Click</button>
-        </div>
 
 
 

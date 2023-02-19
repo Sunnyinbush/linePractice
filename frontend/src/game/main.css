@@ -1,5 +1,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 
 
@@ -8,18 +11,8 @@
         font-family: 'Kanit', sans-serif;
     }
 
-    h1{  
-        font-weight: 500;
-        font-size: 20px;
-        display: block;
-        color: rgba(239, 125, 82, 1);
-        position: relative;
-        margin-top: -90px;
-        text-align: center;
-        
 
-    
-    }
+
 
 
     .top {
