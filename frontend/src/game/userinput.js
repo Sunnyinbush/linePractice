@@ -3,6 +3,7 @@ import mainLogo from'./KrD_log.png';
 import topimg from './top_image.png'
 import './main.css';
 import  './userinput.css'
+import { Container,Row ,Button} from 'react-bootstrap';
 
 export default function Userinput() {
 
@@ -11,15 +12,22 @@ export default function Userinput() {
   return (
     <div >
       
+      <Container>
       <div class='center'>
         <img src={topimg} class='top'/>
-      
          <img  src={mainLogo} class='Logo' />
 
-         <h1>โหมดทันใจ</h1>
+
       </div>
+      <Row>
+        <h1>โหมดทันใจ</h1>
+      </Row>
+
+      </Container>
+     
 
 
+      <Container>
         <div class='box'>
 
           <p>ระยะเวลาที่คุณมี</p>
@@ -31,10 +39,12 @@ export default function Userinput() {
 
 
         </div>
+        </Container>
+     
 
-
-        < div class='seacr'>
-          <button> CLick</button>
+      
+        < div class='seacrh'>
+          <Button> Click</Button>
         </div>
       
         

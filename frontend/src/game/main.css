@@ -11,14 +11,17 @@ h1{
     font-size: 20px;
     display: block;
     text-align: center;
-    margin-top: 180px;
     color: rgba(239, 125, 82, 1);
+    position: relative;
+    margin-top: -90px;
     
+
+  
 }
 
 
 .top {
-  width: 400px;
+  width: 530px;
   position: absolute;
   top: 0;
   left: 50%;
@@ -28,18 +31,20 @@ h1{
 
 .Logo {
   width: 159px;
-  position: absolute;
-  top: 50%;
+  position: relative;
+  top: 10%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  margin-top: -250px; /* adjust this value as needed */
+  margin-top: 170px;
+
 }
 
 .center {
+    position: relative;
+    top: 0;
+    left: 0;
     margin: auto;
-    margin-top: 80px;
-    
 
   }
 
