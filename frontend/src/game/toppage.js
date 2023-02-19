@@ -10,7 +10,7 @@ export default function Toppage() {
     <div className='center'>
       <img src={topimg} className='top' alt={topimg}/>
        <img  src={mainLogo} className='Logo' alt={mainLogo}/>
-       <h1>โหมดทันใจ</h1>
+       <h1 className='text-xl text-blue-400-font-blue'>โหมดทันใจ</h1>
     </div>
 
     </Container>
