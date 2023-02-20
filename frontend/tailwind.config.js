@@ -9,7 +9,8 @@ module.exports = {
       colors:{
 
         'krd' : 'rgba(239, 125, 82, 1)',
-        'box' : ' rgba(255, 249, 228, 1)'
+        'box' : ' rgba(255, 249, 228, 1)',
+        'blue' : 'rgba(119, 124, 182, 1)'
 
       },
     },

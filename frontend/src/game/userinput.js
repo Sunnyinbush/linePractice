@@ -6,6 +6,7 @@ import location from '../image/location.png'
 import price from '../image/price.png'
 import './main.css';
 import Toppage from './toppage';
+import Foot from './foot'
 
 export default function Userinput() {
 
@@ -16,48 +17,56 @@ export default function Userinput() {
       
       <Toppage/>
 
-      <div class="flex items-center justify-center w-full">
-      <div class="box-content w-360 h-300 bg-box mt-5 rounded-2sm">
-        <div class="custom flex items-center mt-10">
-          <img src={clock} alt={clock} class="w-6 h-6 mr-2" />
-          <p>ระยะเวลาที่คุณมี</p>
-        </div>
+        <div className="flex flex-col justify-center items-center ">
+        <div className="bg-box p-4 rounded-xl w-90 h-72">
 
-        <div class="slidecontainer w-80 mx-auto mt-2">
-          <input type="range" min="1" max="100" value="50" class="slider" />
-        </div>
-
-        <div class="custom flex items-center mt-4">
-          <img src={price} alt={clock} class="w-6 h-6 mr-2" />
-          <p>จำนวนเงินที่มี</p>
-        </div>
-
-        <div class="slidecontainer w-80 mx-auto mt-2">
-          <input type="range" min="1" max="100" value="50" class="slider" />
-        </div>
-
-        <div class="custom flex items-center mt-4">
-          <img src={location} alt={clock} class="w-6 h-6 mr-2" />
-          <p>สถานที่</p>
-        </div>
-
-        <div class="search mt-2">
-          <input type="text" class="w-80 mx-auto" />
-        </div>
-      </div>
-    </div>
-
-
-
-      
-
-
-
-          <div className='justify-center max-w-screen-lg mx-auto pb-10'>
-              <img src={botimg} className='absolute  mt-10' alt={botimg}/>
+          <div className=" flex mx-3 ">
+            <img src={clock} alt={clock} className="w-6 h-6 mr-4" />
+            <p className='mr-11 text-blue'>ระยะเวลาที่คุณมี</p>
+          </div>
+          <div className="slidecontainer justify-center w-120 mx-10 mt-2">
+          <label for="customRange1" class="form-label"></label>
+              <input
+                type="range"
+                class="
+                  form-range
+                  appearance-none
+                  w-full
+                  h-6
+                  p-0
+                  bg-transparent
+                  focus:outline-none focus:ring-0 focus:shadow-none
+                "   
+                min="0"
+                max="5"
+                step="0.5"
+                id="customRange1"
+              />
           </div>
 
-        
+          <div className="flex mx-3">
+            <img src={price} alt={clock} className="w-6 h-6 mr-4" />
+            <p  className='mr-11'>จำนวนเงินที่มี</p>
+          </div>
+
+          <div className="slidecontainer w-80 mx-auto mt-2">
+            <input type="range" min="1" max="100" value="50" className="slider" />
+          </div>
+
+          <div className="flex mx-3">
+            <img src={location} alt={clock} className="w-6 h-6 mr-4" />
+            <p  className='mr-11'>สถานที่</p>
+          </div>
+
+          <div className="search mt-2">
+            <input type="text" className="w-80 mx-auto bg-black" />
+          </div>
+        </div>
+      </div>
+      
+    <Foot/>
+   
     </div>
+
   )
 }
