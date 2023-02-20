@@ -9,7 +9,7 @@ services:
     ports:
       - '9000:9000'
     volumes:
-      - ./db.json:/data/db.json
+      - ./jsonServer:/data/db.json
 
   backend:
     container_name: backend
