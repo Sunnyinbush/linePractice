@@ -45,11 +45,6 @@ app.post('/webhook', (req, res) => {
   res.sendStatus(200);
 });
 
-
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
-
-app.listen(PORT, () => {
-  console.log(`Example app listening at http://localhost:${PORT}`)
+  console.log(`Example app listening at http://localhost:${port}`)
 })

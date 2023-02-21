@@ -9,7 +9,8 @@ services:
     ports:
       - '9000:9000'
     volumes:
-      - ./jsonServer:/data/db.json
+      - ./jsonServer:/app
+      - /app/node_modules
 
   backend:
     container_name: backend
