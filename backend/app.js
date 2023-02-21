@@ -1,30 +1,51 @@
-const express = require('express')
-const {WebhookClient} = require('dialogflow-fulfillment')
-const app = express()
-app.use(express.json())
-app.get('/', (req, res) => {
-    res.send("Server Is Working......")
-})
-/**
-* on this route dialogflow send the webhook request
-* For the dialogflow we need POST Route.
-* */
-app.post('/webhook', (req, res) => {
-    // get agent from request
-    let agent = new WebhookClient({request: req, response: res})
-    // create intentMap for handle intent
-    let intentMap = new Map();
-    // add intent map 2nd parameter pass function
-    intentMap.set('KinRaiDee-Flex',handleWebHookIntent)
-    // now agent is handle request and pass intent map
-    agent.handleRequest(intentMap)
-})
-function handleWebHookIntent(agent){
-    agent.add("Hello I am Webhook demo How are you...")
+const express = require('express');
+const bodyParser = require('body-parser');
+const line = require('@line/bot-sdk');
+const config = {
+  channelAccessToken: 'vqiiCUBQCIZS0AJwgAunwn47nyFlDemUcsx9fr7SPXIQmXIlbg17N5hm0z+zo1Kcgges2TvHcKRoDuKBFiF0rAHuqE7TBQNYFlk1Q+Mkq2UyymeyWA249Abektv8lnES71cNhVO1LdOQiqsX/kx5ywdB04t89/1O/w1cDnyilFU=',
+  channelSecret: 'ca2d11dc313463c0420dce1998398dfa',
+};
+const app = express();
+const client = new line.Client(config);
+const port = process.env.PORT || 4000;
+
+function sendFlexMessage(userId) {
+  const message = {
+    type: 'flex',
+    altText: 'This is a Flex Message',
+    contents: {
+      type: 'bubble',
+      body: {
+        type: 'box',
+        layout: 'vertical',
+        contents: [
+          {
+            type: 'text',
+            text: 'Hello, Fu!',
+          },
+        ],
+      },
+    },
+  };
+
+  return client.pushMessage(userId, message);
 }
-/**
-* now listing the server on port number 3000 :)
-* */
-app.listen(4000, () => {
-    console.log("Server is Running on port 4000")
+
+app.use(bodyParser.json());
+
+app.post('/webhook', (req, res) => {
+  const { events } = req.body;
+  events.forEach(async (event) => {
+    if (event.type === 'message' && event.message.type === 'text') {
+      const { userId } = event.source;
+      await sendFlexMessage(userId);
+    }
+  });
+
+  res.sendStatus(200);
+});
+
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
 })
