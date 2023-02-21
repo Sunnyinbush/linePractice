@@ -1,68 +1,53 @@
-const https = require("https")
-const express = require("express")
-const app = express()
-const PORT = process.env.PORT || 4000
-const TOKEN = "vqiiCUBQCIZS0AJwgAunwn47nyFlDemUcsx9fr7SPXIQmXIlbg17N5hm0z+zo1Kcgges2TvHcKRoDuKBFiF0rAHuqE7TBQNYFlk1Q+Mkq2UyymeyWA249Abektv8lnES71cNhVO1LdOQiqsX/kx5ywdB04t89/1O/w1cDnyilFU="
+const express = require('express');
+const bodyParser = require('body-parser');
+const line = require('@line/bot-sdk');
+const config = {
+  channelAccessToken: 'vqiiCUBQCIZS0AJwgAunwn47nyFlDemUcsx9fr7SPXIQmXIlbg17N5hm0z+zo1Kcgges2TvHcKRoDuKBFiF0rAHuqE7TBQNYFlk1Q+Mkq2UyymeyWA249Abektv8lnES71cNhVO1LdOQiqsX/kx5ywdB04t89/1O/w1cDnyilFU=',
+  channelSecret: 'ca2d11dc313463c0420dce1998398dfa',
+};
+const app = express();
+const client = new line.Client(config);
+const port = process.env.PORT || 4000;
 
-app.use(express.json())
-app.use(express.urlencoded({
-  extended: true
-}))
+function sendFlexMessage(userId) {
+  const message = {
+    type: 'flex',
+    altText: 'This is a Flex Message',
+    contents: {
+      type: 'bubble',
+      body: {
+        type: 'box',
+        layout: 'vertical',
+        contents: [
+          {
+            type: 'text',
+            text: 'Hello, Fu!',
+          },
+        ],
+      },
+    },
+  };
 
-app.get("/", (req, res) => {
-  res.sendStatus(200)
-})
+  return client.pushMessage(userId, message);
+}
 
-app.post("/webhook", function(req, res) {
-  res.send("HTTP POST request sent to the webhook URL!")
-  // If the user sends a message to your bot, send a reply message
-  if (req.body.events[0].type === "message") {
-    // Message data, must be stringified
-    const dataString = JSON.stringify({
-      replyToken: req.body.events[0].replyToken,
-      messages: [
-        {
-          "type": "text",
-          "text": "Hello, user"
-        },
-        {
-          "type": "text",
-          "text": "May I help you?"
-        }
-      ]
-    })
+app.use(bodyParser.json());
 
-    // Request header
-    const headers = {
-      "Content-Type": "application/json",
-      "Authorization": "Bearer " + TOKEN
+app.post('/webhook', (req, res) => {
+  const { events } = req.body;
+  events.forEach(async (event) => {
+    if (event.type === 'message' && event.message.type === 'text') {
+      const { userId } = event.source;
+      await sendFlexMessage(userId);
     }
+  });
 
-    // Options to pass into the request
-    const webhookOptions = {
-      "hostname": "api.line.me",
-      "path": "/v2/bot/message/reply",
-      "method": "POST",
-      "headers": headers,
-      "body": dataString
-    }
+  res.sendStatus(200);
+});
 
-    // Define request
-    const request = https.request(webhookOptions, (res) => {
-      res.on("data", (d) => {
-        process.stdout.write(d)
-      })
-    })
 
-    // Handle error
-    request.on("error", (err) => {
-      console.error(err)
-    })
-
-    // Send data
-    request.write(dataString)
-    request.end()
-  }
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
 })
 
 app.listen(PORT, () => {
