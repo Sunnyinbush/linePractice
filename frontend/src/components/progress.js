@@ -1,33 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import Timer from './Timer';
 
-function Progress() {
+function Progress(restart) {
+  
   const [progress, setProgress] = useState(100);
+  // const [start,setStart] = useState(true);
 
   useEffect(() => {
     const timer = setInterval(() =>{
         setProgress(prev => {
            return prev === 0? prev = 0: prev - 1;
         })
-    },50)
+    },60)
     return () => {
       clearInterval(timer);
     };
 })
-  // const totalTime = 5;
-  // const timeRemaining = progress;
-  // const barWidth = ((timeRemaining / totalTime) * 100);
-  // const prog = 100 - barWidth;
+
+
   
 
-  const circleStyle = {
-    left: `calc(${progress}% - 1px)`,
-    backgroundPositionX: `${100 - progress}%`,
-  };
-
   return (
+    
     <div className=' rounded-r-lg rounded-l-lg'>
-    <div className='h-11 w-168  m-2 md:m-5 h-11 md:h-17 rounded-r-lg rounded-l-lg bg-grey lg:w-240 container'>
+    <div className='h-11 md:w-[168px] md:w-[200px]  m-2 md:m-5 h-11 md:h-17 rounded-r-lg rounded-l-lg bg-grey lg:w-240 container'>
     <div style={{width: `${progress}%` }}>
   
       <div className='h-11 md:h-17 rounded-r-lg rounded-l-lg bg-orange'>

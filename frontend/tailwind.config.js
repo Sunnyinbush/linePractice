@@ -3,16 +3,18 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     screens:{
-      'md' : '375px',
+      'md' : '390px',
       'sm' : '360px',
       'lg' : '420px',
+      'ip6': '375px'
       
     },
     colors:{
       orange: '#EF7D52',
       purple: '#777CB6',
       grey: '#D9D9D9',
-      white : '#FCFCFE'
+      white : '#FCFCFE',
+      yellow: '#EFDA63'
     },
     extend: {
       spacing:{

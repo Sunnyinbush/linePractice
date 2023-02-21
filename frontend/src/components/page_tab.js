@@ -35,11 +35,11 @@ export default function Page() {
   return (
    
    <div className="flex flex-row justify-center">
-      <div className="rounded-l-lg w-[67px] h-[17px] mr-[5px] " style={childStyle1} />
-      <div className="w-[67px] h-[17px] mr-[5px]" style={childStyle2} />
-      <div className="w-[67px] h-[17px] mr-[5px]" style={childStyle3} />
-      <div className="w-[67px] h-[17px] mr-[5px]" style={childStyle4} />
-      <div className="rounded-r-lg w-[67px] h-[17px]" style={childStyle5} />
+      <div className="rounded-l-lg md:w-[67px] md:h-[17px] mr-[5px] ip6:w-[60px] ip6:h-[12px] w-[45px] h-[10px]" style={childStyle1} />
+      <div className="md:w-[67px] md:h-[17px] mr-[5px] ip6:w-[60px] ip6:h-[12px] w-[45px] h-[10px]" style={childStyle2} />
+      <div className="md:w-[67px] md:h-[17px] mr-[5px] ip6:w-[60px] ip6:h-[12px] w-[45px] h-[10px]" style={childStyle3} />
+      <div className="md:w-[67px] md:h-[17px] mr-[5px] ip6:w-[60px] ip6:h-[12px] w-[45px] h-[10px]" style={childStyle4} />
+      <div className="rounded-r-lg md:w-[67px] md:h-[17px] ip6:w-[60px] ip6:h-[12px] w-[45px] h-[10px]" style={childStyle5} />
     </div>
   );
 }

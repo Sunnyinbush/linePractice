@@ -13,8 +13,8 @@ function Body(picture){
         })
     })
     return(
-        <div className="h-56 grid grid-cols-2  gap-2 lg:gap-2 md:gap-3 content-around justify-items-center mt-71 sm:mt-[90px] md:mt-180 ml-16 mr-16">
-            <img className="w-121 h-156 md:w-173 md:h-248 sm:w-[130px] sm:h-[180px]" src={maskgroup1}/>
+        <div className="h-[200px] grid grid-cols-2  gap-2 lg:gap-2 md:gap-3 content-around justify-items-center mt-71 sm:mt-[90px] md:mt-180 ml-16 mr-16">
+            <img className="w-121 h-156 md:w-173 md:h-248 sm:w-[130px] sm:h-[180px] " src={maskgroup1}/>
             <img className="w-121 h-156 md:w-173 md:h-248 sm:w-[130px] sm:h-[180px]" src={maskgroup2}/>
             <img className="w-121 h-156 md:w-173 md:h-248 sm:w-[130px] sm:h-[180px]" src={maskgroup3}/>
             <img className="w-121 h-156 md:w-173 md:h-248 sm:w-[130px] sm:h-[180px]" src={maskgroup4}/>
