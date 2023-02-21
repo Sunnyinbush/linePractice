@@ -13,6 +13,7 @@ import Foot from './foot'
 
 import TimeSlide from './timeslider';
 import Priceslider from './priceslider';
+
 export default function Userinput() {
 
 
@@ -30,7 +31,7 @@ export default function Userinput() {
           
 
 
-          <div className="flex mx-3 ">
+          <div className="flex mx-3 mt-5 ">
             <img src={location} alt={location} className="w-6 h-6 mr-4" />
             <p  className='mr-11'>สถานที่</p>
           </div>
@@ -45,8 +46,6 @@ export default function Userinput() {
 
         </button>
       </div>
-
-
 
       
     <Foot/>

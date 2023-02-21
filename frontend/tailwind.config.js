@@ -11,6 +11,9 @@ module.exports = {
       'lg' : '420px',
       
     },
+    fontSize:{
+      'box_text1':'15px'
+    },
     extend: {
       
       colors:{
