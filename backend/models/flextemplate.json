@@ -1,0 +1,86 @@
+{
+    "type": "bubble",
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "กินอะไรดีมาแล้ว!",
+          "weight": "bold",
+          "size": "xl",
+          "color": "#3B3A3AFF",
+          "margin": "none",
+          "contents": []
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "sm",
+          "margin": "lg",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "baseline",
+              "spacing": "sm",
+              "margin": "none",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "เลือกโหมดที่คุณต้องการใช้เราสิ",
+                  "size": "sm",
+                  "color": "#3B3A3AFF",
+                  "flex": 5,
+                  "wrap": true,
+                  "contents": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "footer": {
+      "type": "box",
+      "layout": "vertical",
+      "flex": 0,
+      "spacing": "sm",
+      "contents": [
+        {
+          "type": "button",
+          "action": {
+            "type": "uri",
+            "label": "โหมดทันใจ",
+            "uri": "https://linecorp.com"
+          },
+          "color": "#EC711EFF",
+          "height": "sm",
+          "style": "primary"
+        },
+        {
+          "type": "button",
+          "action": {
+            "type": "uri",
+            "label": "โหมดตามใจ",
+            "uri": "https://linecorp.com"
+          },
+          "color": "#EAEAEAFF",
+          "margin": "none",
+          "height": "sm",
+          "style": "secondary"
+        },
+        {
+          "type": "button",
+          "action": {
+            "type": "message",
+            "label": "แต่ละโหมดคืออะไร",
+            "text": "นี่คือโหมดทันใจ"
+          },
+          "color": "#FFFEFEFF",
+          "height": "sm",
+          "style": "secondary"
+        }
+      ]
+    }
+  }
+
