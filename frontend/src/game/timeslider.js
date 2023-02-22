@@ -6,17 +6,17 @@ import clock from '../image/clock.png'
 
 export default function TimeSlide() {
   const STEP = 5;
-  const MIN = 5;
+  const MIN = 10;
   const MAX = 120;
   const [times, setTime] = useState([10]);
 
 
   return (
     <div> 
-    <div className=" flex ml-3 ">
+    <div className=" flex ml-2 ">
         <img src={clock} alt={clock} className="w-6 h-6 mr-4" />
         <p className='mr-12 text-blue text-[15px]'>ระยะเวลาที่คุณมี</p>
-        <p className='ml-12 text-krd text-lg font-medium text-[15px]'>{times[0]} นาที</p>
+        <p className='ml-10 text-krd text-lg font-medium text-[15px]'>{times[0]} นาที</p>
       </div>
       <div className="slidecontainer justify-center w-120 mx-4 mt-4 rounded-md">
             <Range
@@ -52,12 +52,14 @@ export default function TimeSlide() {
               )}
               
             />
-        <div className="text-krd mt-4 text-sm">
-        <div class="flex justify-between">
-          <p class="text-sm">10 นาที</p>
-          <p class="text-sm">Center text</p>
-          <p class="text-sm">Right text</p>
-          <p class="text-sm">Right text</p>
+        <div className="text-krd mt-2 text-sm">
+        <div class="flex ">
+          <p class="mr-2 text-[10px] font-small">10 นาที</p>
+          <p class="pr-6 text-[10px] font-small">30 นาที</p>
+          <p class="ml-6 mr-5 text-[10px] font-small">60 นาที</p>
+          <p class="ml-6 mr-5 text-[10px] font-small">90 นาที</p>
+          <p class="ml-3 text-[10px] font-small">ไม่จำกัด</p>
+
    
         </div>
         </div>

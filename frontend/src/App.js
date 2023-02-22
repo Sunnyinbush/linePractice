@@ -1,10 +1,14 @@
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Switch,Route} from 'react-router-dom';
 import React, { Component } from 'react';
 import Userinput from './game/userinput';
+import Line from './Line/Line';
+import { useHistory } from 'react-router-dom';
 
 const liff = window.liff;
 
+
 class App extends Component {
+  
 
   // constructor(props) {
   //   super(props);
@@ -16,6 +20,7 @@ class App extends Component {
   //   };
   // }
 
+  
   // componentDidMount = async () => {
   //   await liff.init({ liffId: `1657931960-VynB8GvL` }).catch(err => { throw err });
   //   if (liff.isLoggedIn()) {
@@ -29,22 +34,24 @@ class App extends Component {
   //     liff.login();
   //   }
   // }
+    
 
   render() {
 
   return (
 
     <Router>
-          <div className="App">
-
-
+      <div className="App">
+      {/* <Line name={this.state.name} userLineID={this.state.userLineID} pictureUrl={this.state.pictureUrl} />
+       */}
         <Userinput/>
-
-
+       <Switch>
+        <Route path="/userinput">
+          <Userinput/>
+        </Route>
+       </Switch>
 
        </div>
-
-
     </Router>
 
   );

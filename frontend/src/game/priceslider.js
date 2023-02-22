@@ -4,22 +4,22 @@ import { Range, getTrackBackground } from 'react-range';
 import pricepic from '../image/price.png';
 
 export default function Priceslider() {
-  const [values, setValues] = useState([400, 2000]);
+  const [values, setValues] = useState([250, 2000]);
 
 
   return (
     <div>
-      <div className="flex mt-4 ml-3">
+      <div className="flex mt-4 ml-2">
         <img src={pricepic} alt={pricepic} className="w-6 h-6 mr-4" />
         <p className="mr-4 text-blue text-[15px]'">งบประมาณต่อคน</p>
-        <p className="ml-3 text-krd text-lg font-medium text-[15px]">
+        <p className=" ml-2 text-krd text-lg font-medium text-[15px]">
           {values[0]} - {values[1]} บาท
         </p>
       </div>
       <div className="justify-center w-120 mx-4 mt-4 rounded-md">
         <Range
           values={values}
-          step={100}
+          step={300}
           min={100}
           max={3000}
           onChange={(newValues) => setValues(newValues)}
@@ -74,6 +74,15 @@ export default function Priceslider() {
           )}
         />
       </div>
+      <div className="text-krd mt-2 text-sm">
+        <div class="flex ">
+        <p class="pr-2 text-[10px] font-small">100 บาท</p>
+          <p class="pl-10 text-[10px] font-small">1000 บาท</p>
+      
+          <p class="pl-14 text-[10px] font-small">2000 บาท</p>
+          <p class="pl-14 text-[10px] font-small">ไม่จำกัด</p>
+        </div>
+        </div>
     </div>
   );
 }
