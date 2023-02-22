@@ -5,13 +5,20 @@ import Heading from "./components/Heading.js";
 import Progress from './components/progress';
 import Body from './components/Body';
 import PageTag from './components/page_tab';
+import maskgroup1 from "./components/image/Mask group-1.png";
+import maskgroup2 from "./components/image/Mask group-2.png";
+import maskgroup3 from "./components/image/Mask group-3.png";
+import maskgroup4 from "./components/image/Mask group.png";
 
 
 function App() {
+    const pic_list = [maskgroup1, maskgroup2, maskgroup3, maskgroup4];
+
+    
   return (
     
     <div id='overall-con'> 
-        <div className='mt-73'>
+        <div className='mt-73 plus:mt-[60px]'>
             <div className='flex justify-center items-center ' id='timer&head'>
                 <div className='flex-1 w-32 mx-auto ml-8'>
                     <Heading/>
@@ -21,7 +28,8 @@ function App() {
                 </div>
             </div>
             <div className="ip6:h-[320px] md:h-[400px] lg:h-[400px] mt-[100px] h-[280px]">
-                <Body/>
+                <Body picture={pic_list} />
+
             </div>
            
             <div className='mt-100'>
