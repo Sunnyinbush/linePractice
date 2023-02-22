@@ -15,7 +15,9 @@ module.exports = {
       'box_text1':'15px'
     },
     extend: {
-      
+      boxShadow:{
+        '3t' : ' 0 0 6px 6px  rgba(0, 0, 0, 0.3)'
+      },
       colors:{
 
           orange: '#EF7D52',
@@ -26,7 +28,9 @@ module.exports = {
           'krd' : 'rgba(239, 125, 82, 1)',
           'box' : ' rgba(255, 249, 228, 1)',
           'blue' : 'rgba(119, 124, 182, 1)',
-          'darkyel' : 'rgba(242, 232, 198, 1)'
+          'darkyel' : 'rgba(242, 232, 198, 1)',
+          'lblack' : 'rgba(71, 71, 71, 1)',
+          'G': 'rgba(238, 238, 238, 1)'
 
       },
       spacing: {
@@ -61,5 +65,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 }

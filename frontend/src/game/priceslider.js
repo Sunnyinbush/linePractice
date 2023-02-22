@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
-import { Range, getTrackBackground } from 'react-range';
-import pricepic from '../image/price.png';
+import { Range } from 'react-range';
+import pricepic from '../image/price.svg';
 
 export default function Priceslider() {
   const [values, setValues] = useState([250, 2000]);
@@ -26,7 +26,7 @@ export default function Priceslider() {
           renderTrack={({ props, children }) => {
             const range = values[1] - values[0];
             const minPercent = ((values[0] - 100) / (3000 - 100)) * 100;
-            const maxPercent = ((values[1] - 100) / (3000 - 100)) * 100;
+          
             return (
               <div
                 {...props}
@@ -75,12 +75,12 @@ export default function Priceslider() {
         />
       </div>
       <div className="text-krd mt-2 text-sm">
-        <div class="flex ">
-        <p class="pr-2 text-[10px] font-small">100 บาท</p>
-          <p class="pl-10 text-[10px] font-small">1000 บาท</p>
+        <div className="flex ">
+        <p className="pr-2 text-[10px] font-small">100 บาท</p>
+          <p className="pl-10 text-[10px] font-small">1000 บาท</p>
       
-          <p class="pl-14 text-[10px] font-small">2000 บาท</p>
-          <p class="pl-14 text-[10px] font-small">ไม่จำกัด</p>
+          <p className="pl-14 text-[10px] font-small">2000 บาท</p>
+          <p className="pl-14 text-[10px] font-small">ไม่จำกัด</p>
         </div>
         </div>
     </div>

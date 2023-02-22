@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Range, getTrackBackground } from "react-range";
 
-import clock from '../image/clock.png'
+import clock from '../image/clock.svg'
 
 
 export default function TimeSlide() {
@@ -53,12 +53,12 @@ export default function TimeSlide() {
               
             />
         <div className="text-krd mt-2 text-sm">
-        <div class="flex ">
-          <p class="mr-2 text-[10px] font-small">10 นาที</p>
-          <p class="pr-6 text-[10px] font-small">30 นาที</p>
-          <p class="ml-6 mr-5 text-[10px] font-small">60 นาที</p>
-          <p class="ml-6 mr-5 text-[10px] font-small">90 นาที</p>
-          <p class="ml-3 text-[10px] font-small">ไม่จำกัด</p>
+        <div className="flex ">
+          <p className="mr-2 text-[10px] font-small">10 นาที</p>
+          <p className="pr-6 text-[10px] font-small">30 นาที</p>
+          <p className="ml-6 mr-5 text-[10px] font-small">60 นาที</p>
+          <p className="ml-6 mr-5 text-[10px] font-small">90 นาที</p>
+          <p className="ml-3 text-[10px] font-small">ไม่จำกัด</p>
 
    
         </div>
