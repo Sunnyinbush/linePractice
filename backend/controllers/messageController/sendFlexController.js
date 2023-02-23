@@ -6,13 +6,13 @@ const config = {
 };
 
 const client = new line.Client(config);
-console.log(flexMessageData);
+
+// Send Flex Message
 const sendFlexMessage = async (req, res) => {
   const { events } = req.body;
   events.forEach(async (event) => {
-    if (event.type === 'message' && event.message.type === 'text') {
+    if (event.type === 'message' && event.message.type === 'text' && event.message.text === 'กินไรดี'||'กินอะไรดี') {
       console.log(event);
-      const { groupId } = event.source;
       // Construct the Flex message object using the retrieved data
       const message = {
         type: 'flex',
@@ -20,8 +20,17 @@ const sendFlexMessage = async (req, res) => {
         contents: flexMessageData,
       };
 
-      // Send the Flex message to the user
-      return client.pushMessage(groupId, message);
+      if (event.source.type === 'group') {
+        groupId = event.source.groupId;
+        // Send the Flex message to the group
+        return client.pushMessage(groupId, message);
+      } else if (event.source.type === 'user') {
+        userId = event.source.userId;
+        // Send the Flex message to the user
+        return client.pushMessage(userId, message);
+      }
+    } else{
+      
     }
   });
 
