@@ -12,39 +12,40 @@ const liff = window.liff;
 class App extends Component {
   
 
-  // constructor(props) {
-  //   super(props);
+  constructor(props) {
+    super(props);
 
-  //   this.state = {
-  //     name: '',
-  //     userLineID: '',
-  //     pictureUrl: '',
-  //     users:[]
-  //   };
-  // }
+    this.state = {
+      name: '',
+      userLineID: '',
+      pictureUrl: '',
+      users:[]
+    };
+  }
 
   
   
-  // componentDidMount = async () => {
-  //   await liff.init({ liffId: `1657931960-VynB8GvL` }).catch(err => { throw err });
-  //   if (liff.isLoggedIn()) {
-  //     let getProfile = await liff.getProfile();
-  //     let user = {
-  //       name: getProfile.displayName,
-  //       userLineID: getProfile.userId,
-  //       pictureUrl: getProfile.pictureUrl,
-  //     };
+  componentDidMount = async () => {
+    await liff.init({ liffId: `1657931960-VynB8GvL` }).catch(err => { throw err });
+    if (liff.isLoggedIn()) {
+      let getProfile = await liff.getProfile();
+      
+      let user = {
+        name: getProfile.displayName,
+        userLineID: getProfile.userId,
+        pictureUrl: getProfile.pictureUrl,
+      };
   
-  //     if (!this.state.users.find(u => u.userLineID === user.userLineID)) {
-  //       this.setState(prevState => ({
-  //         users: [...prevState.users, user]
-  //       }));
-  //     };
-  //   } else {
-  //     liff.login();
-  //   }
+      if (!this.state.users.find(u => u.userLineID === user.userLineID)) {
+        this.setState(prevState => ({
+          users: [...prevState.users, user]
+        }));
+      };
+    } else {
+      liff.login();
+    }
   
-  // }
+  }
   
 
   render() {
@@ -62,11 +63,11 @@ class App extends Component {
 
       <Switch>
         <Route exact path="/">
-        {/* {this.state.users.map(user => {
+        {this.state.users.map(user => {
 
           return <Line name={user.name} userLineID={user.userLineID} pictureUrl={user.pictureUrl} />
-        })} */}
-          <Line/>
+        })}
+          {/* <Line/> */}
         </Route>
         <Route path="/userinput">
           <Userinput />

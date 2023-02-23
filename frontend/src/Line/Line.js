@@ -42,7 +42,7 @@ export default function Line(props) {
             <img src={props.pictureUrl} className='h-[50px] inline-flex rounded-[300px] mr-3'></img>
 
 
-              <Link to="/urchoice" className="bg-krd hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4
+              <Link to="/userinput" className="bg-krd hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4
                rounded-[12px] w-full h-[50px] inline-flex items-center justify-center mt-[20px]">
                 <p className='text-white text-center'>สร้างเกมโหมดทันใจ</p>
               </Link>

@@ -18,11 +18,11 @@ export default function Userinput() {
 
 
   return (
-    <div >
+    <div className='h-screen ' >
       
       <Toppage/>
 
-        <div className="flex flex-col justify-center items-center ">
+        <div className="flex flex-col justify-center   items-center ">
         <div className="relative bg-box p-4 rounded-xl w-[350px] h-68">
 
           <TimeSlide/>
