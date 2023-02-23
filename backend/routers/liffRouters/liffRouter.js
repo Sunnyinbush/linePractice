@@ -2,7 +2,7 @@
 //1. Build a route for getting the User ID, location, budget, and the time that they have
 //2. Build a route for postting pictures that the users had choosen
 const express = require('express');
-const controller = require('../controller/foodController')
+const controller = require('../../controllers/liffControllers/foodController')
 const router = express.Router();
 
 

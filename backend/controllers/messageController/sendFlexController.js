@@ -11,7 +11,8 @@ const sendFlexMessage = async (req, res) => {
   const { events } = req.body;
   events.forEach(async (event) => {
     if (event.type === 'message' && event.message.type === 'text') {
-      const { userId } = event.source;
+      console.log(event);
+      const { groupId } = event.source;
       // Construct the Flex message object using the retrieved data
       const message = {
         type: 'flex',
@@ -20,7 +21,7 @@ const sendFlexMessage = async (req, res) => {
       };
 
       // Send the Flex message to the user
-      return client.pushMessage(userId, message);
+      return client.pushMessage(groupId, message);
     }
   });
 
