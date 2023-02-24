@@ -8,7 +8,7 @@ module.exports = {
     screens:{
       'md' : '375px',
       'sm' : '360px',
-      'lg' : '420px',
+      'lg' : '430px',
       
     },
     fontSize:{

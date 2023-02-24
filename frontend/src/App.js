@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch,Route} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import React, { Component } from 'react';
 import Userinput from './game/userinput';
 import Userinput2 from './game/userinput2';
@@ -8,10 +8,7 @@ import Urchoice2 from './game/urchoice2';
 
 const liff = window.liff;
 
-
 class App extends Component {
-  
-
   constructor(props) {
     super(props);
 
@@ -19,79 +16,57 @@ class App extends Component {
       name: '',
       userLineID: '',
       pictureUrl: '',
-      users:[]
+      users: [],
     };
   }
 
-  
-  
   componentDidMount = async () => {
-    await liff.init({ liffId: `1657931960-VynB8GvL` }).catch(err => { throw err });
+    await liff.init({ liffId: this.props.liffId }).catch((err) => {
+      throw err;
+    });
     if (liff.isLoggedIn()) {
       let getProfile = await liff.getProfile();
-      
-      let user = {
+      console.log(getProfile)
+      this.setState({
         name: getProfile.displayName,
         userLineID: getProfile.userId,
         pictureUrl: getProfile.pictureUrl,
-      };
-  
-      if (!this.state.users.find(u => u.userLineID === user.userLineID)) {
-        this.setState(prevState => ({
-          users: [...prevState.users, user]
-        }));
-      };
+      });
     } else {
       liff.login();
     }
-  
-  }
-  
+  };
 
   render() {
-
-    const date1= new Date(Date.now());
-    const gameID = date1.valueOf()
-    console.log(gameID)
-
-  return (
-
-    <Router>
-      <div className="App">
-      {/* <Line name={this.state.name} userLineID={this.state.userLineID} pictureUrl={this.state.pictureUrl} /> */}
-
-
-      <Switch>
-        <Route exact path="/">
-        {this.state.users.map(user => {
-
-          return <Line name={user.name} userLineID={user.userLineID} pictureUrl={user.pictureUrl} />
-        })}
-          {/* <Line/> */}
-        </Route>
-        <Route path="/userinput">
-          <Userinput />
-        </Route>
-        <Route path ="/userinput2">
-          <Userinput2/>
-        </Route>
-        <Route path = '/urchoice'>
-          <Urchoice/>
-        </Route>
-        <Route path = '/urchoice2'>
-          <Urchoice2/>
-        </Route>
-        
-        
-   
-      </Switch>
-
-
-       </div>
-    </Router>
-
-  );
-}
+    return (
+      <Router>
+        <div className="App">
+          <Switch>
+            <Route exact path="/">
+              <Line
+                liffId="1657442367-op7nlxeV"
+                name={this.state.name}
+                serLineID={this.state.userLineID}
+                pictureUrl={this.state.pictureUrl}
+              />
+            </Route>
+            <Route path="/userinput">
+              <Userinput  />
+            </Route>
+            <Route path="/userinput2">
+              <Userinput2 />
+            </Route>
+            <Route path="/urchoice">
+              <Urchoice liffId="1657442367-kRXYxNW6"/>
+            </Route>
+            <Route path="/urchoice2">
+              <Urchoice2 />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;
