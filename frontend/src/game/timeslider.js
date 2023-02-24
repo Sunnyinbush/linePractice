@@ -17,8 +17,9 @@ export default function TimeSlide() {
     <div className=" flex ml-2 ">
         <img src={clock} alt={clock} className="w-6 h-6 mr-4" />
         <p className='mr-12 text-blue text-[15px]'>ระยะเวลาที่คุณมี</p>
-        <p className='ml-10 text-krd text-lg font-medium text-[15px]'>{times[0]} นาที</p>
-        
+        <p className='ml-10 text-krd text-lg font-medium text-[15px]'>
+        {times[0] > 120 ? 'ไม่จำกัด' : `${times[0]} นาที`}
+      </p>
       </div>
       <div className="slidecontainer justify-center w-120 mx-4 mt-4 rounded-md">
             <Range
@@ -27,8 +28,8 @@ export default function TimeSlide() {
               max={MAX}
            
               values={times}
-              onChange={(values) => {
-              setTime(values)
+              onChange={(newValues) => {
+                setTime([newValues[0]]);
               }}
               renderTrack={({ props, children }) => (
                 <div
