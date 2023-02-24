@@ -13,7 +13,5 @@ router.route('/game')
 .get(controller.getResult) //Pun will be recieving from me
 .post(controller.postResult); //I will recieve the result of the game from pun (Data: Q1 what pic, Q2 What pic ...)
 
-router.route('/lineId')
-.post(controller.postLineId);
 
 module.exports = router;
