@@ -1,11 +1,30 @@
 const Joi = require("joi");
 const fs = require("fs");
+const axios = require('axios');
+const { response } = require("express");
 
 //Retrieving UserID, location, budget, and the time that the user have
 //Get json data based on the info
 
 
 const filePath = 'd:/Coding/linePractice/jsonServer/database.json';
+const storageEndpoint = 'http://localhost:9000/lineId';
+
+
+const postLineId = (req, res) => {
+  const lineId = req.body;
+
+  axios.post(storageEndpoint, lineId)
+    .then(response => {
+      console.log(`Data saved successfully: ${response.data}`);
+      res.status(200).json({status: 'received info', data: info});
+    })
+    .catch(error => {
+      console.error(`Error saving data: ${error.message}`);
+      res.status(500).send('Internal server error');
+    });
+}
+
 
 //req.body.json มี key = userID ที่รับเป็น
 const postLineGroup = (req,res) => {
@@ -70,6 +89,7 @@ const postResult = (req, res) => {
 }
 
 module.exports = {
+    postLineId,
     postLineGroup,
     getResult,
     postResult
