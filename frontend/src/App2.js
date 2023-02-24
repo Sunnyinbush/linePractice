@@ -12,13 +12,13 @@ import maskgroup4 from "./components/image/Mask group.png";
 
 
 function App() {
-    const pic_list = [maskgroup1, maskgroup2, maskgroup3, maskgroup4];
+    const pic_list = [maskgroup1, maskgroup2, maskgroup3, maskgroup4,''];
 
     
   return (
     
     <div id='overall-con'> 
-        <div className='mt-73 plus:mt-[60px]'>
+        <div className='mt-73 plus:mt-[30px] lg:mt-73'>
             <div className='flex justify-center items-center ' id='timer&head'>
                 <div className='flex-1 w-32 mx-auto ml-8'>
                     <Heading/>
