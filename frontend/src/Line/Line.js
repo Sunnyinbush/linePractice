@@ -4,10 +4,24 @@ import Logo from '../image/KrD_log2.svg';
 import SearchComponent from './search';
 import {useState,useEffect} from 'react';
 import {getProfile} from '@line/liff'
+import axios from 'axios';
+
 
 export default function Line(props) {
 
   const [users,setUsers] = useState([]);
+  const url = ' http://localhost:9000/gameState';
+
+  axios.get(url)
+  .then(response => {
+    console.log(response.data);
+    // console.log(response.memberList)
+  })
+  .catch(error => {
+    console.error(error);
+  });
+  
+ 
 
 
   // Make sure that the path is redirect to the new one properly
@@ -24,7 +38,7 @@ export default function Line(props) {
             <div className="flex items-center mb-4 mt-4">
             <input type="checkbox" className="w-6 h-6 rounded-full bg-G text-krd mx-5"  />
 
-              <img src={props.pictureUrl} className='h-[43px] inline-flex rounded-[300px] mr-3'></img>
+              <img  src={props.pictureUrl}  className='h-[43px] inline-flex rounded-[300px] mr-3'></img>
               <p className='mr-10 font-semibold text-[16px]'>{props.name}</p>
    
              </div>

@@ -6,6 +6,8 @@ import Line from './Line/Line';
 import Urchoice from './game/urchoice';
 import Urchoice2 from './game/urchoice2';
 import Game from './game';
+import { getProfile } from '@line/liff'
+import Line2 from './Line2'
 
 const liff = window.liff;
 
@@ -16,31 +18,28 @@ class App extends Component {
     this.state = {
       name: '',
       userLineID: '',
-      pictureUrl: '',
-      users: [],
+      pictureUrl: ''
     };
   }
 
-  componentDidMount = async () => {
-    await liff.init({ liffId: this.props.liffId }).catch((err) => {
-      throw err;
-    });
+  componentDidMount = async() => {
+    await liff.init({ liffId: `1657442367-op7nlxeV` }).catch(err=>{throw err});
     if (liff.isLoggedIn()) {
       let getProfile = await liff.getProfile();
-      console.log(getProfile)
       this.setState({
         name: getProfile.displayName,
         userLineID: getProfile.userId,
         pictureUrl: getProfile.pictureUrl,
       });
-    } else {
+    }else{
       liff.login();
     }
-  };
+  }
+
 
 
   render() {
-
+    const { liffId } = this.state;
 
     return (
       <Router>
@@ -48,10 +47,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/">
               <Line
-                liffId="1657442367-op7nlxeV"
-                name={this.state.name}
-                serLineID={this.state.userLineID}
-                pictureUrl={this.state.pictureUrl}
+                userId={'U5fa42a05ec532c25481e27bba36a5974'}
               />
             </Route>
             <Route path="/userinput">
@@ -61,7 +57,7 @@ class App extends Component {
               <Userinput2 />
             </Route>
             <Route path="/urchoice">
-              <Urchoice liffId="1657442367-kRXYxNW6"/>
+              <Urchoice />
             </Route>
             <Route path="/urchoice2">
               <Urchoice2 />
