@@ -3,9 +3,8 @@
 @import 'tailwindcss/utilities';
 
 *{
-  font-family: 'Mitr', sans-serif;
-  font-weight: bold;
- 
+  font-family: 'Kanit', sans-serif;;
+
 }
 
 .timer{

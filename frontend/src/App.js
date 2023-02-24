@@ -5,6 +5,7 @@ import Userinput2 from './game/userinput2';
 import Line from './Line/Line';
 import Urchoice from './game/urchoice';
 import Urchoice2 from './game/urchoice2';
+import Game from './game';
 
 const liff = window.liff;
 
@@ -37,7 +38,10 @@ class App extends Component {
     }
   };
 
+
   render() {
+
+
     return (
       <Router>
         <div className="App">
@@ -61,6 +65,9 @@ class App extends Component {
             </Route>
             <Route path="/urchoice2">
               <Urchoice2 />
+            </Route>
+            <Route path="/game">
+              <Game/>
             </Route>
           </Switch>
         </div>

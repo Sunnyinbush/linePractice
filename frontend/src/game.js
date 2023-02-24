@@ -11,7 +11,7 @@ import maskgroup3 from "./components/image/Mask group-3.png";
 import maskgroup4 from "./components/image/Mask group.png";
 
 
-function App() {
+function Game() {
     const pic_list = [maskgroup1, maskgroup2, maskgroup3, maskgroup4,''];
 
     
@@ -41,6 +41,6 @@ function App() {
   );
 }
 
-export default App;
+export default Game;
 
 // "grid grid-cols-2 gap-4 ml-10 ip14:mt-12 ip5:mr-9 "
