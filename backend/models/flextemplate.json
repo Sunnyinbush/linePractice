@@ -51,7 +51,7 @@
         "action": {
           "type": "uri",
           "label": "สร้างเกมโหมดทันใจ",
-          "uri": "https://linecorp.com"
+          "uri": "https://liff.line.me/1657442367-op7nlxeV"
         },
         "color": "#EC711EFF",
         "height": "sm",
@@ -124,7 +124,7 @@
           "action": {
             "type": "uri",
             "label": "โหมดทันใจ",
-            "uri": "https://liff.line.me/1657931960-VynB8GvL"
+            "uri": "https://liff.line.me/1657442367-op7nlxeV"
           },
           "color": "#EC711EFF",
           "height": "sm",
@@ -135,7 +135,7 @@
           "action": {
             "type": "uri",
             "label": "โหมดตามใจ",
-            "uri": "https://linecorp.com"
+            "uri": "https://liff.line.me/1657442367-kRXYxNW6"
           },
           "color": "#EAEAEAFF",
           "height": "sm",
