@@ -1,4 +1,77 @@
 {
+  "groupflex":{
+  "type": "bubble",
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "กินอะไรดีมาแล้ว!",
+        "weight": "bold",
+        "size": "xl",
+        "color": "#3B3A3AFF",
+        "contents": []
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "margin": "lg",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "margin": "none",
+            "contents": [
+              {
+                "type": "text",
+                "text": "เราจะมาเล่นเกมเลือกอาหารกัน",
+                "weight": "bold",
+                "size": "sm",
+                "color": "#3B3A3AFF",
+                "flex": 5,
+                "contents": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "flex": 0,
+    "spacing": "sm",
+    "contents": [
+      {
+        "type": "button",
+        "action": {
+          "type": "uri",
+          "label": "สร้างเกมโหมดทันใจ",
+          "uri": "https://liff.line.me/1657442367-op7nlxeV"
+        },
+        "color": "#EC711EFF",
+        "height": "sm",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "โหมดทันใจคืออะไร",
+          "text": "โหมดทันใจคือ"
+        },
+        "color": "#FFFEFEFF",
+        "height": "sm",
+        "style": "secondary"
+      }
+    ]
+  }
+  },
+  "userflex":{
     "type": "bubble",
     "body": {
       "type": "box",
@@ -44,14 +117,14 @@
       "type": "box",
       "layout": "vertical",
       "flex": 0,
-      "spacing": "sm",
+      "spacing": "md",
       "contents": [
         {
           "type": "button",
           "action": {
             "type": "uri",
             "label": "โหมดทันใจ",
-            "uri": "https://linecorp.com"
+            "uri": "https://liff.line.me/1657442367-op7nlxeV"
           },
           "color": "#EC711EFF",
           "height": "sm",
@@ -62,10 +135,9 @@
           "action": {
             "type": "uri",
             "label": "โหมดตามใจ",
-            "uri": "https://linecorp.com"
+            "uri": "https://liff.line.me/1657442367-kRXYxNW6"
           },
           "color": "#EAEAEAFF",
-          "margin": "none",
           "height": "sm",
           "style": "secondary"
         },
@@ -83,4 +155,4 @@
       ]
     }
   }
-
+}
