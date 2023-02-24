@@ -11,7 +11,7 @@ const client = new line.Client(config);
 const sendFlexMessage = async (req, res) => {
   const { events } = req.body;
   events.forEach(async (event) => {
-    if (event.type === 'message' && event.message.type === 'text' && event.message.text === 'กินไรดี'||'กินอะไรดี') {
+    if (event.type === 'message' && event.message.type === 'text' && (event.message.text === 'กินไรดี' || event.message.text === 'กินอะไรดี')) {
       console.log(event);
       if (event.source.type === 'group') {
         // Construct the Flex message object using the retrieved data
