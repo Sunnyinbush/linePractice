@@ -1,59 +1,40 @@
 const Joi = require("joi");
 const fs = require("fs");
+const axios = require('axios');
 
-//Retrieving UserID, location, budget, and the time that the user have
-//Get json data based on the info
+//file path for database.json in jsonserver
+const filePath = "./backend/database.json";
 
+const postLineGroup = async (req, res) => {
+  const schema = {
+    ownerId: Joi.string().required(),
+    gameId: Joi.number().required(),
+    groupId: Joi.string().required(),
+    memberList: Joi.array().required(),
+    selectedTime: Joi.number().required(),
+    selectedBudget: Joi.array().required(),
+    selectedLocation: Joi.string().required(),
+  };
 
-const filePath = 'd:/Coding/linePractice/jsonServer/database.json';
+  const info = {
+    ownerId: req.body.ownerId,
+    gameId: req.body.gameId,
+    groupId: req.body.groupId,
+    memberList: req.body.memberList,
+    selectedTime: req.body.selectedTime,
+    selectedBudget: req.body.selectedBudget,
+    selectedLocation: req.body.selectedLocation
+  };
 
-//req.body.json มี key = userID ที่รับเป็น
-const postLineGroup = (req,res) => {
-    const schema = {
-        userId: Joi.array().required(),
-        groupId: Joi.string().required(),
-        location: Joi.string().required(),
-        ownerId: Joi.string().required(),
-        timeLimit: Joi.number().required(),
-        budget: Joi.array().required()
-    }
-
-    const result = Joi.validate(req.body.json, schema);
-    if (result.error) {
-        res.status(400).send(result.error.details[0].message)
-        return;
-    }
-    const info = {
-        userId: req.body.userId,
-        groupId: req.body.groupId,
-        location: req.body.location,
-        ownerId: req.body.ownerId,
-        timeLimit: req.body.timeLimit,
-        budget: req.body.budget
-    };
-    try {
-        let existingData = fs.readFileSync(filePath);
-        if (existingData) {
-          existingData = JSON.parse(existingData);
-          if (Array.isArray(existingData)) {
-            existingData.push(info);
-          } else {
-            existingData = [existingData, info];
-          }
-        } else {
-          existingData = [info];
-        }
-      
-        fs.writeFileSync(filePath, JSON.stringify(existingData));
-        console.log(`Data saved to ${filePath}`);
-      
-        res.status(200).json({status: 'received info', data: info});
-      } catch (err) {
-        console.error(err);
-      }
-      
+  try {
+    const response = await axios.post('http://localhost:9000/gameState', info);
+    console.log(`Data saved to port 9000: ${response.data}`);
+    res.status(200).json({ status: 'received info', data: response.data });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Internal server error');
+  }
 };
-
 
 const getResult = (req, res) => {
     res.status(200).json({

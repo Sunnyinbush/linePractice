@@ -4,7 +4,7 @@ const config = {
   channelAccessToken: 'vqiiCUBQCIZS0AJwgAunwn47nyFlDemUcsx9fr7SPXIQmXIlbg17N5hm0z+zo1Kcgges2TvHcKRoDuKBFiF0rAHuqE7TBQNYFlk1Q+Mkq2UyymeyWA249Abektv8lnES71cNhVO1LdOQiqsX/kx5ywdB04t89/1O/w1cDnyilFU=',
   channelSecret: 'ca2d11dc313463c0420dce1998398dfa',
 };
-const sendToDb = require('../liffControllers/foodController');
+const sendToDb = require('../liffControllers/foodController').default;
 const client = new line.Client(config);
 
 // Send Flex Message
