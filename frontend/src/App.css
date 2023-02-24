@@ -1,0 +1,23 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+*{
+  font-family: 'Mitr', sans-serif;
+  font-weight: bold;
+ 
+}
+
+.timer{
+  border-radius: 100%;
+}
+.circle{
+  background-color: #777CB6;
+  border-radius: 100%;
+  /* height: 40px;
+  width: 40px; */
+  position: relative;
+  bottom: 10px;
+  
+  
+}

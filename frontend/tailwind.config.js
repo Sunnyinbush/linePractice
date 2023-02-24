@@ -1,15 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./src/**/*.{html,js}"],
   theme: {
     screens:{
       'md' : '375px',
       'sm' : '360px',
       'lg' : '420px',
-      
+      'ip6': '375px',
+      'plus': '414px'
     },
     fontSize:{
       'box_text1':'15px'
@@ -67,3 +65,4 @@ module.exports = {
   },
   plugins: [require("@tailwindcss/forms")],
 }
+
