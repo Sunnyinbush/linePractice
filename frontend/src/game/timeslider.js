@@ -10,6 +10,7 @@ export default function TimeSlide() {
   const MAX = 120;
   const [times, setTime] = useState([10]);
 
+  
 
   return (
     <div> 
@@ -17,6 +18,7 @@ export default function TimeSlide() {
         <img src={clock} alt={clock} className="w-6 h-6 mr-4" />
         <p className='mr-12 text-blue text-[15px]'>ระยะเวลาที่คุณมี</p>
         <p className='ml-10 text-krd text-lg font-medium text-[15px]'>{times[0]} นาที</p>
+        
       </div>
       <div className="slidecontainer justify-center w-120 mx-4 mt-4 rounded-md">
             <Range
