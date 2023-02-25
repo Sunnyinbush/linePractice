@@ -17,51 +17,46 @@ class App extends Component {
       name: '',
       userLineID: '',
       pictureUrl: '',
-      users: [],
+      lineLiffId: '1657442367-op7nlxeV`',
+      gameLiffId: '1657442367-JL8n6BYl',
     };
   }
 
-  componentDidMount = async () => {
-    await liff.init({ liffId: this.props.liffId }).catch((err) => {
-      throw err;
-    });
+  componentDidMount = async() => {
+    await liff.init({ liffId: this.state.lineLiffId }).catch(err=>{throw err});
     if (liff.isLoggedIn()) {
       let getProfile = await liff.getProfile();
-      console.log(getProfile)
       this.setState({
         name: getProfile.displayName,
         userLineID: getProfile.userId,
         pictureUrl: getProfile.pictureUrl,
       });
-    } else {
+    }else{
       liff.login();
     }
-  };
+  }
+
+
+
 
 
   render() {
-
-
+    const { lineLiffId, gameLiffId } = this.state;
     return (
       <Router>
         <div className="App">
           <Switch>
             <Route exact path="/">
-              <Line
-                liffId="1657442367-op7nlxeV"
-                name={this.state.name}
-                serLineID={this.state.userLineID}
-                pictureUrl={this.state.pictureUrl}
-              />
+              <Line liffId={lineLiffId} name={this.state.name} userLineID={this.state.userLineID} pictureUrl={this.state.pictureUrl}/>
             </Route>
-            <Route path="/userinput">
-              <Userinput  />
+            <Route path="/userinput" >
+              <Userinput  name={this.state.name} userLineID={this.state.userLineID} pictureUrl={this.state.pictureUrl} />
             </Route>
             <Route path="/userinput2">
-              <Userinput2 />
+              <Userinput2 liffId={gameLiffId} />
             </Route>
             <Route path="/urchoice">
-              <Urchoice liffId="1657442367-kRXYxNW6"/>
+              <Urchoice />
             </Route>
             <Route path="/urchoice2">
               <Urchoice2 />
