@@ -30,7 +30,6 @@ export default function Priceslider() {
     }
   }
 
-  console.log(priceRange())
   const STEP = 1;
   const MIN = 1;
   const MAX = 5;
@@ -85,13 +84,13 @@ export default function Priceslider() {
             />
       </div>
       <div className="text-krd mt-2 text-sm">
-        <div className="flex ">
+        <div className="flex text-inline">
         <p className=" text-[10px] font-small">  &lt; 100</p>
-          <p className=" mx-10 text-[10px] font-small">101-250</p>
+          <p className=" ml-10 text-[10px] font-small">101-250</p>
       
-          <p className=" mx-10 text-[10px] font-small">251-500</p>
-          <p className=" mx-10 text-[10px] font-small">501-100</p>
-          <p className="mx-10 text-[10px] font-small"> 	&gt; 1000</p>
+          <p className=" ml-10 text-[10px] font-small">251-500</p>
+          <p className="ml-10 text-[10px] font-small">501-100</p>
+          <p className="ml-9 text-[10px] font-small"> 	&gt; 1000</p>
         </div>
         </div>
     </div>

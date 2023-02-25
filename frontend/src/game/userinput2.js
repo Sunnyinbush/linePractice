@@ -27,7 +27,7 @@ export default function Userinput2() {
             </div>
 
         
-            <Link to="/" className="bg-krd hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4
+            <Link to="/game" className="bg-krd hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4
                rounded-[24.5px] w-[50%] h-[50px] inline-flex items-center justify-center mt-[30px] ">
                 <p className='text-white text-center'>เริ่มเลย</p>
               </Link>
