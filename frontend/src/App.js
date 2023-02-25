@@ -7,61 +7,56 @@ import Urchoice from './game/urchoice';
 import Urchoice2 from './game/urchoice2';
 import Game from './game';
 
-const liff = window.liff;
+// const liff = window.liff;
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+  // constructor(props) {
+  //   super(props);
 
-    this.state = {
-      name: '',
-      userLineID: '',
-      pictureUrl: '',
-      users: [],
-    };
-  }
+  //   this.state = {
+  //     name: '',
+  //     userLineID: '',
+  //     pictureUrl: '',
+  //     lineLiffId: '1657442367-op7nlxeV`',
+  //     gameLiffId: '1657442367-JL8n6BYl',
+  //   };
+  // }
 
-  componentDidMount = async () => {
-    await liff.init({ liffId: this.props.liffId }).catch((err) => {
-      throw err;
-    });
-    if (liff.isLoggedIn()) {
-      let getProfile = await liff.getProfile();
-      console.log(getProfile)
-      this.setState({
-        name: getProfile.displayName,
-        userLineID: getProfile.userId,
-        pictureUrl: getProfile.pictureUrl,
-      });
-    } else {
-      liff.login();
-    }
-  };
+  // componentDidMount = async() => {
+  //   await liff.init({ liffId: this.state.lineLiffId }).catch(err=>{throw err});
+  //   if (liff.isLoggedIn()) {
+  //     let getProfile = await liff.getProfile();
+  //     this.setState({
+  //       name: getProfile.displayName,
+  //       userLineID: getProfile.userId,
+  //       pictureUrl: getProfile.pictureUrl,
+  //     });
+  //   }else{
+  //     liff.login();
+  //   }
+  // }
+
+
+
 
 
   render() {
-
-
+    // const { lineLiffId, gameLiffId } = this.state;
     return (
       <Router>
         <div className="App">
           <Switch>
             <Route exact path="/">
-              <Line
-                liffId="1657442367-op7nlxeV"
-                name={this.state.name}
-                serLineID={this.state.userLineID}
-                pictureUrl={this.state.pictureUrl}
-              />
+              <Line />
             </Route>
-            <Route path="/userinput">
+            <Route path="/userinput" >
               <Userinput  />
             </Route>
             <Route path="/userinput2">
               <Userinput2 />
             </Route>
             <Route path="/urchoice">
-              <Urchoice liffId="1657442367-kRXYxNW6"/>
+              <Urchoice />
             </Route>
             <Route path="/urchoice2">
               <Urchoice2 />
