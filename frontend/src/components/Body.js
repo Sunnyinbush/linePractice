@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useCallback } from "react";
 import liff from '@line/liff';
+import axios from "axios";
 // import Progress from "./progress";
 
-function Body({ picture }) {
+function Body({ picture },props) {
   const [selectedImgIndex, setSelectedImgIndex] = useState(-1);
   const [count, setCount] = useState(1);
   const [imgIndexes, setImgIndexes] = useState([]);
@@ -13,7 +14,34 @@ function Body({ picture }) {
   const [list5,setList5] = useState([]);
   const [borderIndex,setBorderIndex] = useState(null);
   const [counting,setCounting] = useState(0);
+  const [name, setName] = useState('');
+  const [userLineID, setUserLineID] = useState('');
+  const [pictureUrl, setPictureUrl] = useState('');
   
+
+  useEffect(() => {
+    const initLine = async () => {
+      try {
+        await liff.init({ liffId: '1657442367-JL8n6BYl' });
+        if (liff.isLoggedIn()) {
+          const getProfile = await liff.getProfile();
+          setName(getProfile.displayName);
+          setUserLineID(getProfile.userId);
+          setPictureUrl(getProfile.pictureUrl);
+          
+          // Send POST request with userLineID
+          const response = await axios.post('/api/liff/game', { userLineID });
+          console.log(response.data);
+          
+        } else {
+          liff.login();
+        }
+      } catch (error) {
+        throw error;
+      }
+    };
+    initLine();
+  }, []);
 
   
   const handleImgClick = useCallback((index, src) => {
@@ -70,6 +98,7 @@ function Body({ picture }) {
 
     if (count === 5) {
       clearInterval(interval);
+      
     } else {
       setImgIndexes(getRandomInts(4, picture.length - 1));
       setSelectedImgIndex(-1);
