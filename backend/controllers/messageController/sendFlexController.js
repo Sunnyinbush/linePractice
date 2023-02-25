@@ -50,21 +50,22 @@ const endGame = async (req, res) => {
   const events = getData;
   const eventsUser = await events.getGameState();
   const eventsRestaurant = await events.getRestaurantData();
-  const randomNum = Math.floor(Math.random() * 3); 
-  console.log(randomNum);                                                                                    
-  const event = eventsUser[randomNum];
+  const randomNum1 = Math.floor(Math.random() * 3);
+  const randomNum2 = Math.floor(Math.random() * 2); 
+  console.log(randomNum1);                                                                                    
+  const event = eventsUser[randomNum1];
   console.log(event.totalPoints);
-  // if (event.type === 'endGame' || eventsEndOnDemand.message.text === 'จบเกม') {
-    if (JSON.stringify(event.totalPoints) === JSON.stringify(eventsRestaurant[randomNum].choice) || eventsEndOnDemand.message.text === 'จบเกม') {
+  if (event.type === 'endGame' || eventsEndOnDemand.message.text === 'จบเกม') {
+    if (JSON.stringify(event.totalPoints) === JSON.stringify(eventsRestaurant[randomNum1].choice) || eventsEndOnDemand.message.text === 'จบเกม') {
       // Fix Restaurant template
-      flexMessageData['restaurantflex'].hero.altContent.url = eventsRestaurant[randomNum].data.videolink;
-      flexMessageData['restaurantflex'].hero.url = eventsRestaurant[randomNum].data.videolink;
-      flexMessageData['restaurantflex'].hero.previewUrl = eventsRestaurant[randomNum].data.photolink;
-      flexMessageData['restaurantflex'].hero.action.uri = eventsRestaurant[randomNum].data.videolink;
-      flexMessageData['restaurantflex'].body.contents[0].text = eventsRestaurant[randomNum].data.placetitle;
-      flexMessageData['restaurantflex'].body.contents[1].contents[1].text = eventsRestaurant[randomNum].data.rating;
-      flexMessageData['restaurantflex'].body.contents[2].contents[0].contents[1].text = eventsRestaurant[randomNum].data.classification;
-      flexMessageData['restaurantflex'].body.contents[2].contents[1].contents[1].text = eventsRestaurant[randomNum].data.opentime;
+      flexMessageData['restaurantflex'].hero.altContent.url = eventsRestaurant[randomNum1].data[randomNum2].videolink;
+      flexMessageData['restaurantflex'].hero.url = eventsRestaurant[randomNum1].data[randomNum2].videolink;
+      flexMessageData['restaurantflex'].hero.previewUrl = eventsRestaurant[randomNum1].data[randomNum2].photolink;
+      flexMessageData['restaurantflex'].hero.action.uri = eventsRestaurant[randomNum1].data[randomNum2].videolink;
+      flexMessageData['restaurantflex'].body.contents[0].text = eventsRestaurant[randomNum1].data[randomNum2].placetitle;
+      flexMessageData['restaurantflex'].body.contents[1].contents[1].text = eventsRestaurant[randomNum1].data[randomNum2].rating;
+      flexMessageData['restaurantflex'].body.contents[2].contents[0].contents[1].text = eventsRestaurant[randomNum1].data[randomNum2].classification;
+      flexMessageData['restaurantflex'].body.contents[2].contents[1].contents[1].text = eventsRestaurant[randomNum1].data[randomNum2].opentime;
       // console.log(eventsRestaurant[randomNum].data.wongnai);
       // console.log(flexMessageData['restaurantflex'].footer.contents[0].contents.action.uri);
 
@@ -73,16 +74,16 @@ const endGame = async (req, res) => {
       // flexMessageData['restaurantflex'].footer.contents[1].action.uri = eventsRestaurant[randomNum].data.maplink;
 
       // Construct the Flex message object using the retrieved data
-      // const message = {
-      //   type: 'flex',
-      //   altText: 'This is a Flex Message',
-      //   contents: flexMessageData['restaurantflex'][randomNum],
-      // };
       const message = {
-        type: 'text',
-        text: 'สุดยอดเลย คุณชนะแล้ว',
+        type: 'flex',
+        altText: 'This is a Flex Message',
+        contents: flexMessageData['restaurantflex'],
       };
-      
+      // const message = {
+      //   type: 'text',
+      //   text: 'สุดยอดเลย คุณชนะแล้ว',
+      // };
+
       groupId = event.groupId;
       console.log(groupId);
       // Send the Flex message to the group
@@ -99,8 +100,8 @@ const endGame = async (req, res) => {
       await client.pushMessage(userId, message);
     }
   }
-  // res.sendStatus(200);
-// };
+  res.sendStatus(200);
+};
 
 
 module.exports = {
