@@ -40,7 +40,7 @@ const sendFlexMessage = async (req, res) => {
         await client.replyMessage(event.replyToken, message);
       }
     } else if (event.type === 'join'){
-      await client.replyMessage(event.replyToken, { type: 'text', text: 'Hi!' });
+      await client.replyMessage(event.replyToken, { type: 'text', text: 'สวัดดี! ลองพิมพ์คำว่า กินอะไรดี ดูสิ'});
     }
   }
   res.sendStatus(200);
