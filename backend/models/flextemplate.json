@@ -124,7 +124,7 @@
           "action": {
             "type": "uri",
             "label": "โหมดทันใจ",
-            "uri": "https://liff.line.me/1657442367-op7nlxeV"
+            "uri": "https://8f27-203-172-109-232.ap.ngrok.io"
           },
           "color": "#EC711EFF",
           "height": "sm",
@@ -154,5 +154,57 @@
         }
       ]
     }
+  },
+  "startGameGroup":{
+      "type": "bubble",
+      "direction": "ltr",
+      "header": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "md",
+        "contents": [
+          {
+            "type": "text",
+            "text": "creator สร้างเกมแล้ว",
+            "weight": "bold",
+            "size": "xl",
+            "align": "start",
+            "contents": []
+          },
+          {
+            "type": "text",
+            "text": "userIds",
+            "align": "start",
+            "contents": []
+          }
+        ]
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "มาหาอาหารที่เหมาะสมสำหรับทุกคนกันเถอะ",
+            "contents": []
+          }
+        ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "เล่นเกมกันๆ",
+              "uri": "https://8f27-203-172-109-232.ap.ngrok.io"
+            },
+            "color": "#EC711EFF",
+            "style": "primary"
+          }
+        ]
+      }
+    }
   }
-}

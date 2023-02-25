@@ -6,8 +6,9 @@ const config = {
 };
 const sendToDb = require('../liffControllers/foodController').default;
 const client = new line.Client(config);
+const fs = require('fs');
 
-// Send Flex Message
+// Reply Flex Message Before Start Game
 const sendFlexMessage = async (req, res) => {
   const { events } = req.body;
   for (let i = 0; i < events.length; i++) {
@@ -38,6 +39,76 @@ const sendFlexMessage = async (req, res) => {
   }
   res.sendStatus(200);
 };
+
+// Push Flex Message for Start Game
+const startGame = async (req, res) => {
+  const { events } = sendToDb;
+  for (let i = 0; i < events.length; i++) {
+    const event = events[i];
+    if (event.type === 'startGame'){
+      if (event.source.type === 'group') {
+        creator = event.source.userId;
+        participant = event.source.memberList;
+        // Input the required parameter in flexMessageData.startGameGroup.
+        flexMessageData.startGameGroup.header.contents[0].text = `${creator} สร้างเกมแล้ว`;
+        flexMessageData.startGameGroup.header.contents[1].text = `${participant} มาเล่นกันเถอะ`;
+        // Construct the Flex message object using the retrieved data
+        const message = {
+          type: 'flex',
+          altText: 'This is a Flex Message',
+          contents: flexMessageData['startgameGroup'],
+        };
+        groupId = event.source.groupId;
+        // Send the Flex message to the group
+        await client.pushMessage(groupId, message);
+      } else if (event.source.type === 'user') {
+        // Construct the Flex message object using the retrieved data
+        const message = {
+          type: 'flex',
+          altText: 'This is a Flex Message',
+          contents: flexMessageData['userflex'],
+        };
+        userId = event.source.userId;
+        // Send the Flex message to the user
+        await client.pushMessage(userId, message);
+      }
+    }
+  }
+  res.sendStatus(200);
+};
+
+// Push Flex Message for End Game
+const endGame = async (req, res) => {
+  const { events } = sendToDb;
+  for (let i = 0; i < events.length; i++) {
+    const event = events[i];
+    if (event.type === 'endGame') {
+      if (event.source.type === 'group') {
+        // Construct the Flex message object using the retrieved data
+        const message = {
+          type: 'flex',
+          altText: 'This is a Flex Message',
+          contents: flexMessageData['endgameflex'],
+        };
+        groupId = event.source.groupId;
+        // Send the Flex message to the group
+        await client.pushMessage(groupId, message);
+      } else if (event.source.type === 'user') {
+        // Construct the Flex message object using the retrieved data
+        const message = {
+          type: 'flex',
+          altText: 'This is a Flex Message',
+          contents: flexMessageData['endgameflex'],
+        };
+        userId = event.source.userId;
+        // Send the Flex message to the user
+        await client.pushMessage(userId, message);
+      }
+    }
+  }
+  res.sendStatus(200);
+};
+
 
 module.exports = {
   sendFlexMessage,
