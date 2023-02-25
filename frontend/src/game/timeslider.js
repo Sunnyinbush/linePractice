@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Range, getTrackBackground } from "react-range";
 
 import clock from '../image/clock.svg'
