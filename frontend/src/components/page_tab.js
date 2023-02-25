@@ -15,21 +15,21 @@ export default function Page() {
   }, []);
 
   const childStyle1 = {
-    backgroundColor: time >= 5 ? "#EFDA63" : "grey",
+    backgroundColor: time >= 0 ? "#EFDA63" : "grey",
  
   };
   const childStyle2 ={
-    backgroundColor: time >= 10 ? "#EFDA63" : "grey",
+    backgroundColor: time >= 5 ? "#EFDA63" : "grey",
   }
 
   const childStyle3 = {
-    backgroundColor: time >= 15 ? "#EFDA63" : "grey"
+    backgroundColor: time >= 10 ? "#EFDA63" : "grey"
   }
   const childStyle4 = {
-    backgroundColor: time >= 20? "#EFDA63" : "grey"
+    backgroundColor: time >= 15? "#EFDA63" : "grey"
   }
   const childStyle5 = {
-    backgroundColor: time >= 25? "#EFDA63" : "grey"
+    backgroundColor: time >= 20? "#EFDA63" : "grey"
   }
   
   return (

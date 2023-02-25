@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Timer from './Timer';
 
+
 function Progress({setProgress}) {
   const [progress, _setProgress] = useState(100);
   const [count, setCount] = useState(0);

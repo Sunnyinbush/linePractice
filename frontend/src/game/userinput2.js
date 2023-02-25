@@ -1,6 +1,6 @@
 import React from 'react'
-
-import Img from '../image/img.svg'
+import liff from "@line/liff";
+ import Img from '../image/img.svg'
 import './main.css';
 
 
@@ -12,9 +12,31 @@ import Toppage from './toppage';
 import Foot from './foot'
 
 export default function Userinput2() {
+  class App extends Component {
+  constructor(props) {
+    super(props);
 
+    this.state = {
+      name: '',
+      userLineID: '',
+      pictureUrl: ''
+    };
+  }
 
-
+  componentDidMount = async() => {
+    await liff.init({ liffId: this.liffId }).catch(err=>{throw err});
+    if (liff.isLoggedIn()) {
+      let getProfile = await liff.getProfile();
+      this.setState({
+        name: getProfile.displayName,
+        userLineID: getProfile.userId,
+        pictureUrl: getProfile.pictureUrl,
+      });
+    }else{
+      liff.login();
+    }
+  }
+  }
   return (
     <div >
       
