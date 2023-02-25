@@ -246,7 +246,9 @@
                 "opentime": "16:00-21:00",
                 "maplink": "https://goo.gl/maps/wcVYYmtjqEE8ob8R7",
                 "wongnai": "https://www.wongnai.com/r/335284Wf",
-                "videolink": "https://streamable.com/9zhtvl"
+                "videolink": "https://streamable.com/9zhtvl",
+                "rating": "4.4/5",
+                "classification": "อาหารนานาชาติ"
               },
               {
                 "photolink": "https://iili.io/HM69jS4.jpg",
@@ -255,7 +257,9 @@
                 "opentime": "18:00-23:00",
                 "maplink": "https://goo.gl/maps/fbSnv1SmvBn8mzsWA",
                 "wongnai": "https://www.wongnai.com/r/sirocco",
-                "videolink": "https://streamable.com/o4b3uq"
+                "videolink": "https://streamable.com/o4b3uq",
+                "rating": "4.1/5",
+                "classification": "อาหารนานาชาติ"
               }
             ]
           },
@@ -275,7 +279,9 @@
                 "opentime": "09:00 - 20:00",
                 "maplink": "https://goo.gl/maps/YEeQREs4tNGn6xND8",
                 "wongnai": "https://www.wongnai.com/r/shangarila",
-                "videolink": "https://streamable.com/24gtcl"
+                "videolink": "https://streamable.com/24gtcl",
+                "rating": "4.0/5",
+                "classification": "อาหารจีน"
               },
               {
                 "photolink": "https://iili.io/HM69MVn.jpg",
@@ -284,7 +290,9 @@
                 "opentime": "10:00-20:00",
                 "maplink": "https://goo.gl/maps/bGp1NTfJ6g6wrZs56",
                 "wongnai": "https://www.wongnai.com/r/642610ME",
-                "videolink": "https://streamable.com/xh4iig"
+                "videolink": "https://streamable.com/xh4iig",
+                "rating": "4.1/5",
+                "classification": "อาหารจีน"
               }
             ]
           },
@@ -304,7 +312,9 @@
                 "opentime": "จันทร์：17:00-23:00，อังคาร-อาทิตย์: 11:00-23:00",
                 "maplink": "https://goo.gl/maps/xq5XPt9KadRvekcw9",
                 "wongnai": "https://www.wongnai.com/r/291969JI",
-                "videolink": "https://streamable.com/1g9egz"
+                "videolink": "https://streamable.com/1g9egz",
+                "rating": "4.2/5",
+                "classification": "อาหารญี่ปุ่น"
               },
               {
                 "photolink": "https://iili.io/HM69XKG.jpg",
@@ -313,7 +323,9 @@
                 "opentime": "11:00-21:00",
                 "maplink": "https://goo.gl/maps/z5msUm1BS6YUxU5g6",
                 "wongnai": "https://www.wongnai.com/r/594716oY",
-                "videolink": "https://streamable.com/2jthtd"
+                "videolink": "https://streamable.com/2jthtd",
+                "rating": "4.2/5",
+                "classification": "อาหารญี่ปุ่น"
               }
             ]
           }

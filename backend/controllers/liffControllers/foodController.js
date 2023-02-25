@@ -73,9 +73,9 @@ const postResult = async (req, res) => {
   res.send(200, "Game Data Saved Successfully");
 
   //access the gameResult array from the gameState json that has the id of 1
-  const response = await axios.get('http://localhost:9000/gameState/1');
+  const response = await axios.get('http://localhost:9000/gameState');
   const gameResult = response.data.userChoice;
-
+  res.send(gameResult)
 }
 
 module.exports = {
