@@ -6,26 +6,36 @@ import pricepic from '../image/price.svg';
 
 export default function Priceslider() {
   const [values, setValues] = useState([1]);
+
+  const priceRange  = () => {
+    if (values[0] === 1) {
+      return "< 100 บาท";
+    } 
+    
+    if (values[0] === 2) {
+      return "101-250 บาท";
+    } 
+    
+    if (values[0] === 3) {
+      return "251-500 บาท";
+    } 
+    
+    if (values[0] === 4) {
+      return "501-100 บาท";
+    } 
+    
+    
+    else {
+      return 'ไม่จำกัด';
+    }
+  }
+
+  console.log(priceRange())
   const STEP = 1;
   const MIN = 1;
   const MAX = 5;
 
-  function getText() {
-    switch (values) {
-      case 1:
-        return "<100";
-      case "2":
-        return "100-200";
-      case "3":
-        return "200-300";
-      case "4":
-        return "300-400";
-      case "5":
-        return ">400";
-      default:
-        return "";
-    }
-  }
+
 
 
   return (
@@ -33,9 +43,9 @@ export default function Priceslider() {
       <div className="flex mt-4 ml-2">
         <img src={pricepic} alt={pricepic} className="w-6 h-6 mr-4" />
         <p className="mr-4 text-blue text-[15px]'">งบประมาณต่อคน</p>
-        <p className=" ml-2 text-krd text-lg font-medium text-[15px]">
-        
-        {getText()}
+        <p className=" ml-12 text-krd text-lg font-medium text-right text-[15px]">
+
+        {priceRange()} 
 
         </p>
       </div>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import location from '../image/location.svg'
 import next from '../image/next.svg'
@@ -14,6 +14,8 @@ import Priceslider from './priceslider';
 import Foot from './foot'
 
 export default function Userinput() {
+
+  const [locations, setLocations] = useState(["MBK"]);
 
 
 
@@ -36,13 +38,12 @@ export default function Userinput() {
           </div>
 
           <div className="search mt-2">
-          <input className=" appearance-none bg-darkyel border rounded-xl w-full py-2 px-3 text-krd leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Location"/>
+          <input className=" appearance-none bg-darkyel border rounded-xl w-full py-2 px-3 text-krd leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder={locations} disabled/>
           </div>
         </div>
             
         <Link to="/userinput2" className="bg-krd hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-[12px] w-20 h-10 inline-flex items-center mt-4">
           <span className="bg-no-repeat bg-center bg-cover w-4 h-4 ml-4 " style={{ backgroundImage: `url(${next})` }} />
- 
         </Link>
       </div>
 
