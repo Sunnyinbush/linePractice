@@ -7,13 +7,14 @@ const config = {
 
 const client = new line.Client(config);
 const fs = require('fs');
-const { usersChoice } = require('../../../jsonServer/database.json');
-const { restaurantDb } = require('../../models/restaurantModel.js');
 
+const getData = require('../../models/restaurantModel.js');
+// classifier for using sendFLexMessage or endGame
 
 // Reply Flex Message Before Start Game
 const sendFlexMessage = async (req, res) => {
   const { events } = req.body;
+  console.log(events);
   for (let i = 0; i < events.length; i++) {
     const event = events[i];
     if (event.type === 'message' && event.message.type === 'text' && (event.message.text === 'กินไรดี' || event.message.text === 'กินอะไรดี')) {
@@ -45,38 +46,64 @@ const sendFlexMessage = async (req, res) => {
 
 // Push Flex Message for End Game
 const endGame = async (req, res) => {
-  const eventsUser = usersChoice;                                                                                     
-  for (let i = 0; i < eventsUser.length; i++) {
-    const event = eventsUser[i];
-    if (event.type === 'endGame') {
-      if (JSON.stringify(event.UserChoice) === JSON.stringify(event.restaurantDb.restaurantsData[i])) {
-        
-        // Construct the Flex message object using the retrieved data
-        const message = {
-          type: 'flex',
-          altText: 'This is a Flex Message',
-          contents: flexMessageData['restaurantflex'],
-        };
-        groupId = event.source.groupId;
-        // Send the Flex message to the group
-        await client.pushMessage(groupId, message);
-      } else if (event.source.type === 'user') {
-        // Construct the Flex message object using the retrieved data
-        const message = {
-          type: 'flex',
-          altText: 'This is a Flex Message',
-          contents: flexMessageData['restaurantflex'],
-        };
-        userId = event.source.userId;
-        // Send the Flex message to the user
-        await client.pushMessage(userId, message);
-      }
+  const eventsEndOnDemand = req.body;
+  const events = getData;
+  const eventsUser = await events.getGameState();
+  const eventsRestaurant = await events.getRestaurantData();
+  const randomNum = Math.floor(Math.random() * 3); 
+  console.log(randomNum);                                                                                    
+  const event = eventsUser[randomNum];
+  console.log(event.totalPoints);
+  // if (event.type === 'endGame' || eventsEndOnDemand.message.text === 'จบเกม') {
+    if (JSON.stringify(event.totalPoints) === JSON.stringify(eventsRestaurant[randomNum].choice) || eventsEndOnDemand.message.text === 'จบเกม') {
+      // Fix Restaurant template
+      flexMessageData['restaurantflex'].hero.altContent.url = eventsRestaurant[randomNum].data.videolink;
+      flexMessageData['restaurantflex'].hero.url = eventsRestaurant[randomNum].data.videolink;
+      flexMessageData['restaurantflex'].hero.previewUrl = eventsRestaurant[randomNum].data.photolink;
+      flexMessageData['restaurantflex'].hero.action.uri = eventsRestaurant[randomNum].data.videolink;
+      flexMessageData['restaurantflex'].body.contents[0].text = eventsRestaurant[randomNum].data.placetitle;
+      flexMessageData['restaurantflex'].body.contents[1].contents[1].text = eventsRestaurant[randomNum].data.rating;
+      flexMessageData['restaurantflex'].body.contents[2].contents[0].contents[1].text = eventsRestaurant[randomNum].data.classification;
+      flexMessageData['restaurantflex'].body.contents[2].contents[1].contents[1].text = eventsRestaurant[randomNum].data.opentime;
+      // console.log(eventsRestaurant[randomNum].data.wongnai);
+      // console.log(flexMessageData['restaurantflex'].footer.contents[0].contents.action.uri);
+
+      // flexMessageData['restaurantflex'].footer.contents[0].contents.action.uri = eventsRestaurant[randomNum].data.wongnai;
+      // console.log(flexMessageData['restaurantflex'].footer.contents[0].contents.action.uri);
+      // flexMessageData['restaurantflex'].footer.contents[1].action.uri = eventsRestaurant[randomNum].data.maplink;
+
+      // Construct the Flex message object using the retrieved data
+      // const message = {
+      //   type: 'flex',
+      //   altText: 'This is a Flex Message',
+      //   contents: flexMessageData['restaurantflex'][randomNum],
+      // };
+      const message = {
+        type: 'text',
+        text: 'สุดยอดเลย คุณชนะแล้ว',
+      };
+      
+      groupId = event.groupId;
+      console.log(groupId);
+      // Send the Flex message to the group
+      await client.pushMessage(groupId, message);
+    } else{
+      // Construct the Flex message object using the retrieved data
+      const message = {
+        type: 'flex',
+        altText: 'This is a Flex Message',
+        contents: flexMessageData['restaurantflex'],
+      };
+      userId = event.ownerid;
+      // Send the Flex message to the user
+      await client.pushMessage(userId, message);
     }
   }
-  res.sendStatus(200);
-};
+  // res.sendStatus(200);
+// };
 
 
 module.exports = {
   sendFlexMessage,
+  endGame
 };

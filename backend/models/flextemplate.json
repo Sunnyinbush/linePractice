@@ -156,5 +156,174 @@
     }
   },
   "restaurantflex":{
-
-  }}
+      "type": "bubble",
+      "hero": {
+        "type": "video",
+        "altContent": {
+          "type": "image",
+          "size": "full",
+          "aspectRatio": "20:13",
+          "aspectMode": "fit",
+          "url": "https://vos.line-scdn.net/hack/vdo.mp4"
+        },
+        "url": "https://vos.line-scdn.net/hack/vdo.mp4",
+        "previewUrl": "https://vos.line-scdn.net/hack/preview2.jpg",
+        "aspectRatio": "26.73:15",
+        "action": {
+          "type": "uri",
+          "label": "action",
+          "uri": "https://vos.line-scdn.net/hack/vdo.mp4"
+        }
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "ข้าวมันไก่ร้าน 7",
+            "weight": "bold",
+            "size": "xl",
+            "decoration": "none"
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "margin": "md",
+            "contents": [
+              {
+                "type": "icon",
+                "size": "md",
+                "url": "https://iili.io/HM6Tctn.png",
+                "margin": "10px",
+                "offsetTop": "15%"
+              },
+              {
+                "type": "text",
+                "text": "4.0/5",
+                "size": "sm",
+                "color": "#FFFFFF",
+                "margin": "md",
+                "flex": 0,
+                "align": "center",
+                "gravity": "center",
+                "offsetTop": "8%"
+              }
+            ],
+            "backgroundColor": "#FA495E",
+            "width": "80px",
+            "height": "25px",
+            "cornerRadius": "4px",
+            "alignItems": "center"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "lg",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "baseline",
+                "spacing": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "ประเภท",
+                    "color": "#aaaaaa",
+                    "size": "sm",
+                    "flex": 1
+                  },
+                  {
+                    "type": "text",
+                    "text": "Miraina Tower, 4-1-6 Shinjuku, Tokyo",
+                    "wrap": true,
+                    "color": "#666666",
+                    "size": "sm",
+                    "flex": 5
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "spacing": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "เวลา",
+                    "color": "#aaaaaa",
+                    "size": "sm",
+                    "flex": 1
+                  },
+                  {
+                    "type": "text",
+                    "text": "10:00 - 23:00",
+                    "wrap": true,
+                    "color": "#666666",
+                    "size": "sm",
+                    "flex": 5
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": []
+          },
+          {
+            "type": "text",
+            "text": "สีลม",
+            "align": "end",
+            "offsetBottom": "90px",
+            "offsetStart": "10px",
+            "size": "sm"
+          },
+          {
+            "type": "image",
+            "url": "https://iili.io/HM6GrBV.png",
+            "size": "20px",
+            "offsetBottom": "110px",
+            "offsetEnd": "20px"
+          }
+        ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "button",
+                "action": {
+                  "type": "uri",
+                  "label": "เปิดใน Wongnai",
+                  "uri": "http://linecorp.com/"
+                },
+                "color": "#FFFFFF"
+              }
+            ],
+            "backgroundColor": "#ED7D52",
+            "cornerRadius": "15px"
+          },
+          {
+            "type": "button",
+            "style": "secondary",
+            "height": "sm",
+            "action": {
+              "type": "uri",
+              "label": "นำทางไปร้านหน่อย",
+              "uri": "https://linecorp.com"
+            }
+          }
+        ],
+        "flex": 0
+      }
+    }
+  }
