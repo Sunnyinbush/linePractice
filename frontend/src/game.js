@@ -32,7 +32,7 @@ function Game() {
 
             </div>
            
-            <div className='mt-100'>
+            <div className='mt-100 md:mt-[100px] lg:mt-[75px] '>
                 <PageTag/>
             </div>
         </div>
