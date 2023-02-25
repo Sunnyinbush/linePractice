@@ -7,7 +7,6 @@ import Urchoice from './game/urchoice';
 import Urchoice2 from './game/urchoice2';
 import Game from './game';
 import { getProfile } from '@line/liff'
-import Line2 from './Line2'
 
 const liff = window.liff;
 
@@ -22,19 +21,19 @@ class App extends Component {
     };
   }
 
-  componentDidMount = async() => {
-    await liff.init({ liffId: `1657442367-op7nlxeV` }).catch(err=>{throw err});
-    if (liff.isLoggedIn()) {
-      let getProfile = await liff.getProfile();
-      this.setState({
-        name: getProfile.displayName,
-        userLineID: getProfile.userId,
-        pictureUrl: getProfile.pictureUrl,
-      });
-    }else{
-      liff.login();
-    }
-  }
+  // componentDidMount = async() => {
+  //   await liff.init({ liffId: `1657442367-op7nlxeV` }).catch(err=>{throw err});
+  //   if (liff.isLoggedIn()) {
+  //     let getProfile = await liff.getProfile();
+  //     this.setState({
+  //       name: getProfile.displayName,
+  //       userLineID: getProfile.userId,
+  //       pictureUrl: getProfile.pictureUrl,
+  //     });
+  //   }else{
+  //     liff.login();
+  //   }
+  // }
 
 
 
@@ -46,9 +45,7 @@ class App extends Component {
         <div className="App">
           <Switch>
             <Route exact path="/">
-              <Line
-                userId={'U5fa42a05ec532c25481e27bba36a5974'}
-              />
+              <Line/>
             </Route>
             <Route path="/userinput">
               <Userinput  />
