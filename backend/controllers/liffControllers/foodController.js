@@ -1,6 +1,6 @@
 const Joi = require("joi");
 const axios = require('axios');
-const sendFlexMessage = require ('../../controllers/messageController/sendFlexController.js');
+const fs = require('fs');
 
 const postLineGroup = async (req, res) => {
   const schema = {
@@ -68,6 +68,10 @@ const postResult = async (req, res) => {
     userId: req.body.userId,
     result: req.body.result
   };
+
+  //send 200 response
+  res.send(200, "Game Data Saved Successfully");
+
 }
 
 module.exports = {
