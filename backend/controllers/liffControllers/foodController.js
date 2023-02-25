@@ -1,6 +1,6 @@
 const Joi = require("joi");
 const axios = require('axios');
-const fs = require('fs');
+const restaurantModel = require('../../models/restaurantModel.js');
 
 const postLineGroup = async (req, res) => {
   const schema = {
@@ -43,7 +43,7 @@ const postLineGroup = async (req, res) => {
   }
 };
 
-const getResult = (req, res) => {
+const getPicture = (req, res) => {
     res.status(200).json({
         question1: ['pic1', 'pic2'],
         question2: ['pic1', 'pic2'],
@@ -54,9 +54,6 @@ const getResult = (req, res) => {
 }
 
 const postResult = async (req, res) => {
-  //accept result of userID and array of which picture they chose for each page
-  //save to database
-
   const schema = {
     groupId: Joi.string().required(),
     userId: Joi.string().required(),
@@ -69,17 +66,31 @@ const postResult = async (req, res) => {
     result: req.body.result
   };
 
-  //send 200 response
-  res.send(200, "Game Data Saved Successfully");
+  try {
+    // Get game state from jsonServer database
+    const response = await axios.get(`http://localhost:9000/gameState?groupId=${req.body.groupId}`);
 
-  //access the gameResult array from the gameState json that has the id of 1
-  const response = await axios.get('http://localhost:9000/gameState');
-  const gameResult = response.data.userChoice;
-  res.send(gameResult)
+    // Map result to gameResult array based on page number
+    response.data[0].gameResult.forEach((gameResultItem, index) => {
+      const page = gameResultItem.page;
+      gameResultItem.picturechoose.push(req.body.result[page - 1]);
+    });
+
+    // Update game state in jsonServer database
+    await axios.patch(`http://localhost:9000/gameState/${response.data[0].id}`, response.data[0]);
+
+    // Send response to client
+    res.status(200).json(response.data[0]);
+  } catch (error) {
+    // Handle errors
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
 }
+
 
 module.exports = {
     postLineGroup,
-    getResult,
+    getPicture,
     postResult
 }

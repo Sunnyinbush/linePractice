@@ -13,8 +13,8 @@ const getRestaurantData = async (req, res) => {
 
 const getgameState = async (req, res) => {
   try {
-    const response = await axios.get('http://localhost:9000/gameState');
-    res.status(200).json({ status: 'success', data: response.data });
+    const response = axios.get('http://localhost:9000/gameState').then((response) => {
+    res.status(200).json({ status: 'success', data: response.data })});
   } catch (err) {
     console.error(err);
     res.status(500).send('Internal server error');
