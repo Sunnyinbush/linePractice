@@ -4,30 +4,17 @@ import location from '../image/location.svg'
 import next from '../image/next.svg'
 import './main.css';
 
+import Urchoice from './urchoice';
+
+import { Link } from 'react-router-dom';
 
 import Toppage from './toppage';
 import TimeSlide from './timeslider';
 import Priceslider from './priceslider';
 import Foot from './foot'
-import liff from '@line/liff/dist/lib';
+import axios from 'axios';
 
-export default function Userinput(props) {
-
-  async function handleClick() {
-    try {
-      await liff.init({ liffId: this.state.lineLiffId }); // initialize LIFF
- 
-      const userId = props.userId;
-
-
-      console.log("message sent");
-      liff.closeWindow();
-    } catch (error) {
-      console.log("error", error);
-    }
-  }
-
-
+export default function Userinput() {
 
   const [locations, setLocations] = useState(["สีลม"]);
 
@@ -40,7 +27,8 @@ export default function Userinput(props) {
 
   console.log("this in userinput", timeData)
 
-  
+
+
 
 
 
@@ -67,9 +55,9 @@ export default function Userinput(props) {
           </div>
         </div>
   
-        <button  onClick={handleClick} className="bg-krd hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-[12px] w-20 h-10 inline-flex items-center mt-4">
+        <Link to="/userinput2" className="bg-krd hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-[12px] w-20 h-10 inline-flex items-center mt-4">
           <span className="bg-no-repeat bg-center bg-cover w-4 h-4 ml-4 " style={{ backgroundImage: `url(${next})` }} />
-        </button>
+        </Link>
       </div>
 
       

@@ -43,8 +43,8 @@ export default function Line(props) {
 
               <input type="checkbox" className="w-6 h-6 rounded-full bg-G text-krd mx-5"  checked/>
 
-                <img  src={props.pictureUrl}  className='h-[43px] inline-flex rounded-[300px] mr-3'></img>
-                <p className='mr-10  text-[16px]'>{props.name}</p>
+                <img  src={kao}  className='h-[43px] inline-flex rounded-[300px] mr-3'></img>
+                <p className='mr-10  text-[16px]'>Kao_z</p>
               </div>
 
               <hr className='w-[70%] ml-[20%]'/>
@@ -81,17 +81,6 @@ export default function Line(props) {
                 <hr className='w-[70%] ml-[20%]'/>
 
 
-               
-
-                <div className="flex items-center mb-4 mt-4">
-
-                <input type="checkbox" className="w-6 h-6 rounded-full bg-G text-krd mx-5" checked="checked" />
-
-                  <img  src={tt}  className='h-[43px] inline-flex rounded-[300px] mr-3'></img>
-                  <p className='mr-10  text-[16px]'>tt</p>
-                </div>
-
-                <hr className='w-[70%] ml-[20%]'/>
 
 
 
@@ -104,7 +93,7 @@ export default function Line(props) {
             <div className="relative shadow-3t p-4 rounded-t-[30px] h-[150px]">
 
             <div className="relative inline-block ml-4">
-              <img src={props.pictureUrl} className="h-12 w-12 rounded-full" alt="Profile" />
+              <img src={kao} className="h-12 w-12 rounded-full" alt="Profile" />
               <button type="button" className="absolute top-0 right-0 mb-5 ml-4 bg-white rounded-full p-1 text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset">
                 <svg className="h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

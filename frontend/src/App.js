@@ -10,20 +10,20 @@ import Game from './game';
 const liff = window.liff;
 
 class App extends Component {
+
+
   constructor(props) {
     super(props);
 
     this.state = {
       name: '',
       userLineID: '',
-      pictureUrl: '',
-      lineLiffId: '1657442367-op7nlxeV`',
-      gameLiffId: '1657442367-JL8n6BYl',
+      pictureUrl: ''
     };
   }
 
   componentDidMount = async() => {
-    await liff.init({ liffId: this.state.lineLiffId }).catch(err=>{throw err});
+    await liff.init({ liffId: `1657442367-op7nlxeV` }).catch(err=>{throw err});
     if (liff.isLoggedIn()) {
       let getProfile = await liff.getProfile();
       this.setState({
@@ -39,7 +39,6 @@ class App extends Component {
 
 
 
-
   render() {
     const { lineLiffId, gameLiffId } = this.state;
     return (
@@ -47,7 +46,7 @@ class App extends Component {
         <div className="App">
           <Switch>
             <Route exact path="/">
-              <Line liffId={lineLiffId} name={this.state.name} userLineID={this.state.userLineID} pictureUrl={this.state.pictureUrl}/>
+              <Line name={this.state.name} userLineID={this.state.userLineID} pictureUrl={this.state.pictureUrl}/>
             </Route>
             <Route path="/userinput" >
               <Userinput  name={this.state.name} userLineID={this.state.userLineID} pictureUrl={this.state.pictureUrl} />
