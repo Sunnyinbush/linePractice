@@ -4,10 +4,12 @@ const config = {
   channelAccessToken: 'vqiiCUBQCIZS0AJwgAunwn47nyFlDemUcsx9fr7SPXIQmXIlbg17N5hm0z+zo1Kcgges2TvHcKRoDuKBFiF0rAHuqE7TBQNYFlk1Q+Mkq2UyymeyWA249Abektv8lnES71cNhVO1LdOQiqsX/kx5ywdB04t89/1O/w1cDnyilFU=',
   channelSecret: 'ca2d11dc313463c0420dce1998398dfa',
 };
-const {restaurantName} = require('../../models/sendFlexModels.js');
+
 const client = new line.Client(config);
 const fs = require('fs');
-const usersChoice = require('../../models/userModels.js');
+const { usersChoice } = require('../../../jsonServer/database.json');
+const { restaurantDb } = require('../../models/restaurantModel.js');
+
 
 // Reply Flex Message Before Start Game
 const sendFlexMessage = async (req, res) => {
@@ -43,11 +45,12 @@ const sendFlexMessage = async (req, res) => {
 
 // Push Flex Message for End Game
 const endGame = async (req, res) => {
-  const { events } = usersChoice;                                                                                        
-  for (let i = 0; i < events.length; i++) {
-    const event = events[i];
+  const eventsUser = usersChoice;                                                                                     
+  for (let i = 0; i < eventsUser.length; i++) {
+    const event = eventsUser[i];
     if (event.type === 'endGame') {
-      if (event.source.type === 'group') {
+      if (JSON.stringify(event.UserChoice) === JSON.stringify(event.restaurantDb.restaurantsData[i])) {
+        
         // Construct the Flex message object using the retrieved data
         const message = {
           type: 'flex',

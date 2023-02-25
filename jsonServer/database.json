@@ -15,6 +15,7 @@
       "selectedTime": 0,
       "selectedBudget": 0,
       "selectedLocation": "สีลม",
+      "type":"endGame",
       "gameResult": [
         {
           "page": 1,
@@ -92,6 +93,7 @@
     "selectedTime": 0,
     "selectedBudget": 0,
     "selectedLocation": "สีลม",
+    "type":"endGame",
     "gameResult": [
       {
         "page": 1,
@@ -168,6 +170,7 @@
     "selectedTime": 0,
     "selectedBudget": 0,
     "selectedLocation": "สีลม",
+    "type":"endGame",
     "gameResult": [
       {
         "page": 1,

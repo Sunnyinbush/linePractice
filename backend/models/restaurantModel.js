@@ -9,7 +9,7 @@
 //     }
 // };
 
-const restaurantDb = require('../models/restaurantsModel.js');
+const restaurantDb = require('../models/restaurantdb.json');
 
   module.exports = {
     restaurantDb,
