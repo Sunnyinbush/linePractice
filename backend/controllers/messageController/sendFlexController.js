@@ -103,8 +103,68 @@ const endGame = async (req, res) => {
   res.sendStatus(200);
 };
 
+const startGame = async (req, res) => {
+  const events = req.body;
+  const event = events.events[0];
+  if (event.type === 'message' && event.message.type === 'text' && event.message.text === 'เริ่มเกม') {
+    if (event.source.type === 'group') {
+      // Construct the Flex message object using the retrieved data
+      const message = {
+        type: 'flex',
+        altText: 'This is a Flex Message',
+        contents: flexMessageData['groupflex'],
+      };
+      groupId = event.source.groupId;
+      // Send the Flex message to the group
+      await client.pushMessage(event.replyToken, message);
+    } else if (event.source.type === 'user') {
+      // Construct the Flex message object using the retrieved data
+      const message = {
+        type: 'flex',
+        altText: 'This is a Flex Message',
+        contents: flexMessageData['userflex'],
+      };
+      userId = event.source.userId;
+      // Send the Flex message to the user
+      await client.pushMessage(event.replyToken, message);
+    }
+  }
+  res.sendStatus(200);
+};
+
+const finishGame = async (req, res) => {
+  const events = req.body;
+  const event = events.events[0];
+  if (event.type === 'message' && event.message.type === 'text' && event.message.text === 'จบเกม') {
+    if (event.source.type === 'group') {
+      // Construct the Flex message object using the retrieved data
+      const message = {
+        type: 'flex',
+        altText: 'This is a Flex Message',
+        contents: flexMessageData['groupflex'],
+      };
+      groupId = event.source.groupId;
+      // Send the Flex message to the group
+      await client.pushMessage(event.replyToken, message);
+    } else if (event.source.type === 'user') {
+      // Construct the Flex message object using the retrieved data
+      const message = {
+        type: 'flex',
+        altText: 'This is a Flex Message',
+        contents: flexMessageData['userflex'],
+      };
+      userId = event.source.userId;
+      // Send the Flex message to the user
+      await client.pushMessage(event.replyToken, message);
+    }
+  }
+  res.sendStatus(200);
+};
+
 
 module.exports = {
   sendFlexMessage,
+  startGame,
+  finishGame,
   endGame
 };
