@@ -9,50 +9,22 @@ import Game from './game';
 
 const liff = window.liff;
 
-class App extends Component {
 
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      name: '',
-      userLineID: '',
-      pictureUrl: ''
-    };
-  }
-
-  componentDidMount = async() => {
-    await liff.init({ liffId: `1657442367-op7nlxeV` }).catch(err=>{throw err});
-    if (liff.isLoggedIn()) {
-      let getProfile = await liff.getProfile();
-      this.setState({
-        name: getProfile.displayName,
-        userLineID: getProfile.userId,
-        pictureUrl: getProfile.pictureUrl,
-      });
-    }else{
-      liff.login();
-    }
-  }
-
-
-
-
-  render() {
-    const { lineLiffId, gameLiffId } = this.state;
-    return (
-      <Router>
+export default function App() {
+  return (
+    <div>
+       <Router>
         <div className="App">
           <Switch>
             <Route exact path="/">
-              <Line name={this.state.name} userLineID={this.state.userLineID} pictureUrl={this.state.pictureUrl}/>
+              <Line />
             </Route>
             <Route path="/userinput" >
-              <Userinput  name={this.state.name} userLineID={this.state.userLineID} pictureUrl={this.state.pictureUrl} />
+              <Userinput />
             </Route>
             <Route path="/userinput2">
-              <Userinput2 liffId={gameLiffId} />
+              <Userinput2 />
             </Route>
             <Route path="/urchoice">
               <Urchoice />
@@ -66,8 +38,6 @@ class App extends Component {
           </Switch>
         </div>
       </Router>
-    );
-  }
+    </div>
+  )
 }
-
-export default App;
