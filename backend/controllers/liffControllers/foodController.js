@@ -1,9 +1,6 @@
 const Joi = require("joi");
-const fs = require("fs");
 const axios = require('axios');
-
-//file path for database.json in jsonserver
-const filePath = "./backend/database.json";
+const sendFlexMessage = require ('../../controllers/messageController/sendFlexController.js');
 
 const postLineGroup = async (req, res) => {
   const schema = {
@@ -16,7 +13,7 @@ const postLineGroup = async (req, res) => {
     selectedLocation: Joi.string().required(),
   };
 
-  const info = {
+  const infotodb = {
     ownerId: req.body.ownerId,
     gameId: req.body.gameId,
     groupId: req.body.groupId,
@@ -26,9 +23,22 @@ const postLineGroup = async (req, res) => {
     selectedLocation: req.body.selectedLocation
   };
 
+  const infotoflex = {
+    type: "gameStart",
+    source: {
+      type: "group",
+      groupId: req.body.groupId,
+      userId: req.body.ownerId,
+      memberList: req.body.memberList
+    }
+
+  }
+
   try {
-    const response = await axios.post('http://localhost:9000/gameState', info);
+    const response = await axios.post('http://localhost:9000/gameState', infotodb);
     console.log(`Data saved to port 9000: ${response.data}`);
+    const response2 = await axios.post('http://localhost:4000/webhook', infotoflex);
+    console.log(`Flex posted to LINE ${response2.data}`);
     res.status(200).json({ status: 'received info', data: response.data });
   } catch (err) {
     console.error(err);
