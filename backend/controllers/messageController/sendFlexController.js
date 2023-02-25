@@ -39,6 +39,8 @@ const sendFlexMessage = async (req, res) => {
         // Send the Flex message to the user
         await client.replyMessage(event.replyToken, message);
       }
+    } else if (event.type === 'join'){
+      await client.replyMessage(event.replyToken, { type: 'text', text: 'Hi!' });
     }
   }
   res.sendStatus(200);
