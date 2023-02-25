@@ -31,7 +31,6 @@ const postLineGroup = async (req, res) => {
       userId: req.body.ownerId,
       memberList: req.body.memberList
     }
-
   }
 
   try {
