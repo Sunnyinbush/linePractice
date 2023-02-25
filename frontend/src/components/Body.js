@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useCallback } from "react";
+import liff from '@line/liff';
 // import Progress from "./progress";
 
 function Body({ picture }) {
   const [selectedImgIndex, setSelectedImgIndex] = useState(-1);
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
   const [imgIndexes, setImgIndexes] = useState([]);
   const [list,setList] = useState([]);
   const [list2,setList2] = useState([]);
@@ -19,20 +20,20 @@ function Body({ picture }) {
     if (count === 1) {
       setList2((prevList) => [...prevList, "localhost:3000" + src]);
     } 
-    else if (count===2){
+    if (count===2){
       setList3((prevList) => [...prevList, "localhost:3000" + src]);
   }
-    else if (count === 0) {
+    if (count === 0) {
       setList((prevList) => [...prevList, "localhost:3000" + src]);
     }
-    else if (count === 3){
+    if (count === 3){
       setList4((prevList) => [...prevList, "localhost:3000" + src]);
     }
-    else if (count=== 4){
+    if (count=== 4){
       setList5((prevList) => [...prevList, "localhost:3000" + src]);
     }
     setSelectedImgIndex(index);
-    setCounting(() => 1);
+    setCounting((prev) => prev+1);
     // setImgIndexes(getRandomInts(4, picture.length-1));
     // console.log(count);
     // console.log(counting);
@@ -80,16 +81,16 @@ function Body({ picture }) {
     return () => clearInterval(interval);
   }, [count,picture.length]);
 
-  useEffect(() => {
-    // Your existing code...
+  // useEffect(() => {
+  //   // Your existing code...
   
-    // Click on the first image after mounting the component
-    if (selectedImgIndex === -1 && imgIndexes.length > 0) {
-      handleImgClick(0, picture[imgIndexes[0]]);
-    }
+  //   // Click on the first image after mounting the component
+  //   if (selectedImgIndex === -1 && imgIndexes.length > 0) {
+  //     handleImgClick(0, picture[imgIndexes[0]]);
+  //   }
   
-    // Your existing code...
-  }, [selectedImgIndex, imgIndexes, picture, handleImgClick]);
+  //   // Your existing code...
+  // }, [selectedImgIndex, imgIndexes, picture, handleImgClick]);
   
 
   return (

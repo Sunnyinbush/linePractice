@@ -9,75 +9,76 @@ import Priceslider from './priceslider';
 import Foot from './foot';
 
 
-export default function Userinput() {
+export default function Userinput(props) {
 
   async function handleClick() {
-  try {
-    await liff.init({ liffId: this.state.lineLiffId }); // initialize LIFF
-    const profile = await liff.getProfile(); // get user profile
-    const userId = profile.userId;
-
-    const message = {
-      type: "flex",
-      altText: "This is a Flex Message",
-      contents: {
-        type: "bubble",
-        direction: "ltr",
-        header: {
-          type: "box",
-          layout: "vertical",
-          contents: [
-            {
-              type: "text",
-              text: "creator สร้างเกมแล้ว!",
-              weight: "regular",
-              size: "xl",
-              align: "start",
-              contents: []
-            },
-            {
-              type: "text",
-              text: userId,
-              align: "start",
-              contents: []
-            }
-          ]
-        },
-        body: {
-          type: "box",
-          layout: "vertical",
-          contents: [
-            {
-              type: "text",
-              text: "มาหาอาหารที่เหมาะสมสําหรับทุกคนกันเถอะ",
-              offsetBottom: "20px",
-              contents: []
-            },
-            {
-              type: "button",
-              action: {
-                type: "uri",
-                label: "เล่นเกมกันๆ",
-                uri: "https://liff.line.me/1657442367-JL8n6BYl"
-              },
-              color: "#EC711EFF",
-              style: "primary"
-            }
-          ]
-        }
-      }
-    };
-
-    await liff.sendMessages([message]).then(() => {
-      console.log("message sent");
-      liff.closeWindow();
-    });
+  try{
+    await liff.init({ liffId: props.liffId }); // initialize LIFF
+    const profile = await liff.getProfile();
+    console.log("message sent");
   } catch (error) {
     console.log("error", error);
+  } finally {
+    await liff.closeWindow(); // close the LIFF window
   }
 }
+ // get user profile
 
-  
+    // const message = {
+    //   type: "flex",
+    //   altText: "This is a Flex Message",
+    //   contents: {
+    //     type: "bubble",
+    //     direction: "ltr",
+    //     header: {
+    //       type: "box",
+    //       layout: "vertical",
+    //       contents: [
+    //         {
+    //           type: "text",
+    //           text: "creator สร้างเกมแล้ว!",
+    //           weight: "regular",
+    //           size: "xl",
+    //           align: "start",
+    //           contents: []
+    //         },
+    //         {
+    //           type: "text",
+    //           text: userId,
+    //           align: "start",
+    //           contents: []
+    //         }
+    //       ]
+    //     },
+    //     body: {
+    //       type: "box",
+    //       layout: "vertical",
+    //       contents: [
+    //         {
+    //           type: "text",
+    //           text: "มาหาอาหารที่เหมาะสมสําหรับทุกคนกันเถอะ",
+    //           offsetBottom: "20px",
+    //           contents: []
+    //         },
+    //         {
+    //           type: "button",
+    //           action: {
+    //             type: "uri",
+    //             label: "เล่นเกมกันๆ",
+    //             uri: "https://liff.line.me/1657442367-JL8n6BYl"
+    //           },
+    //           color: "#EC711EFF",
+    //           style: "primary"
+    //         }
+    //       ]
+    //     }
+    //   }
+    // };
+
+//     await liff.sendMessages([message]);
+
+
+
   
   
 
