@@ -35,9 +35,7 @@ const postLineGroup = async (req, res) => {
 
   try {
     const response = await axios.post('http://localhost:9000/gameState', infotodb);
-    console.log(`Data saved to port 9000: ${response.data}`);
-    const response2 = await axios.post('http://localhost:4000/webhook', infotoflex);
-    console.log(`Flex posted to LINE ${response2.data}`);
+    console.log(`Data saved to port 9000:`);
     res.status(200).json({ status: 'received info', data: response.data });
   } catch (err) {
     console.error(err);
@@ -55,8 +53,21 @@ const getResult = (req, res) => {
     })
 }
 
-const postResult = (req, res) => {
-    res.send("posting result")
+const postResult = async (req, res) => {
+  //accept result of userID and array of which picture they chose for each page
+  //save to database
+
+  const schema = {
+    groupId: Joi.string().required(),
+    userId: Joi.string().required(),
+    result: Joi.array().required(),
+  };
+
+  const result = {
+    groupId: req.body.groupId,
+    userId: req.body.userId,
+    result: req.body.result
+  };
 }
 
 module.exports = {

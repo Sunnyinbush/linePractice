@@ -1,17 +1,16 @@
-// const axios = require("axios")
+//get all restaurantdata in database.json in jsonServer at local host 9000 and export the module using axios
+const axios = require('axios');
 
-// async function getData() {
-//     try {
-//       const res = await axios.get('http://localhost:9000/info');
-//       return res.data;
-//     } catch (error) {
-//       console.log('error');
-//     }
-// };
+const getRestaurantData = async (req, res) => {
+  try {
+    const response = await axios.get('http://localhost:9000/restaurantData');
+    res.status(200).json({ status: 'success', data: response.data });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Internal server error');
+  }
+}
 
-const restaurantDb = require('../models/restaurantdb.json');
-
-  module.exports = {
-    restaurantDb,
-  };
-module.exports = {restaurantDb};
+module.exports = {
+  getRestaurantData,
+};
