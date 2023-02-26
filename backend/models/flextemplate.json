@@ -325,5 +325,52 @@
         ],
         "flex": 0
       }
-    }
+    },
+  "startgroupflex" : {
+    "type": "bubble",
+        "direction": "ltr",
+        "header": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "Kao_z สร้างเกมแล้ว!",
+              "weight": "regular",
+              "size": "xl",
+              "align": "start",
+              "contents": []
+            },
+            {
+              "type": "text",
+              "text": "@fu @Pun @Arty @tt",
+              "align": "start",
+              "color": "#777CB6",
+              "contents": []
+            }
+          ]
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "หาร้านที่เหมาะสมสําหรับทุกคนกัน",
+              "offsetBottom": "20px",
+              "contents": []
+            },
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "เล่นเกมกันๆ",
+                "uri": "https://liff.line.me/1657442367-JL8n6BYl"
+              },
+              "color": "#EC711EFF",
+              "style": "primary"
+            }
+          ]
+        }
+  }
   }

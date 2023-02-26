@@ -69,7 +69,6 @@ const postResult = async (req, res) => {
   try {
     // Get game state from jsonServer database
     const response = await axios.get(`http://localhost:9000/gameState?groupId=${req.body.groupId}`);
-
     // Map result to gameResult array based on page number
     response.data[0].gameResult.forEach((gameResultItem, index) => {
       const page = gameResultItem.page;
@@ -77,7 +76,7 @@ const postResult = async (req, res) => {
     });
 
     // Update game state in jsonServer database
-    await axios.patch(`http://localhost:9000/gameState/${response.data[0].id}`, response.data[0]);
+    await axios.patch(`http://localhost:9000/gameState/${response.data[0].groupId}`, response.data[0]);
 
     // Send response to client
     res.status(200).json(response.data[0]);
