@@ -42,7 +42,7 @@ render() {
   
   return (
     <div >
-    <div className='overflow-y-auto h-[400px] lg:h-[650px]' >
+    <div className='overflow-y-auto h-[550px] lg:h-[650px]' >
         <div className='justify-center pb-4' >
 
             <img  src={Logo} className=' h-[30px] w-35 mx-8 mt-10  ' alt={Logo}/>
@@ -56,7 +56,7 @@ render() {
 
             <input type="checkbox" className="w-6 h-6 rounded-full bg-G text-krd mx-5" checked />
 
-              <img  src={all}  className='h-[43px] inline-flex rounded-[300px] mr-3'></img>
+              <img  src={all}  className='h-[43px] inline-flex rounded-[300px] mr-3' alt={all}></img>
               <p className='mr-10  text-[16px]'>All</p>
    
              </div>
@@ -67,7 +67,7 @@ render() {
 
               <input type="checkbox" className="w-6 h-6 rounded-full bg-G text-krd mx-5"  checked/>
 
-                <img  src={this.state.pictureUrl}  className='h-[43px] inline-flex rounded-[300px] mr-3'></img>
+                <img  src={this.state.pictureUrl}  className='h-[43px] inline-flex rounded-[300px] mr-3' alt='owner'></img>
                 <p className='mr-10  text-[16px]'>{this.state.name}</p>
               </div>
 
@@ -77,7 +77,7 @@ render() {
 
             <input type="checkbox" className="w-6 h-6 rounded-full bg-G text-krd mx-5" checked />
 
-              <img  src={fu}  className='h-[43px] inline-flex rounded-[300px] mr-3'></img>
+              <img  src={fu}  className='h-[43px] inline-flex rounded-[300px] mr-3' alt={fu}></img>
               <p className='mr-10  text-[16px]'>Fu</p>
              </div>
 
@@ -87,7 +87,7 @@ render() {
 
               <input type="checkbox" className="w-6 h-6 rounded-full bg-G text-krd mx-5" checked />
 
-                <img  src={Pun}  className='h-[43px] inline-flex rounded-[300px] mr-3'></img>
+                <img  src={Pun}  className='h-[43px] inline-flex rounded-[300px] mr-3' alt={Pun}></img>
                 <p className='mr-10  text-[16px]'>Pun</p>
               </div>
 
@@ -98,7 +98,7 @@ render() {
 
                 <input type="checkbox" className="w-6 h-6 rounded-full bg-G text-krd mx-5" checked />
 
-                  <img  src={arty}  className='h-[43px] inline-flex rounded-[300px] mr-3'></img>
+                  <img  src={arty}  className='h-[43px] inline-flex rounded-[300px] mr-3' alt={arty}></img>
                   <p className='mr-10  text-[16px]'>Arty</p>
                 </div>
 
@@ -108,7 +108,7 @@ render() {
 
                   <input type="checkbox" className="w-6 h-6 rounded-full bg-G text-krd mx-5" checked />
 
-                    <img  src={tt}  className='h-[43px] inline-flex rounded-[300px] mr-3'></img>
+                    <img  src={tt}  className='h-[43px] inline-flex rounded-[300px] mr-3' alt={tt}></img>
                     <p className='mr-10  text-[16px]'>Tt</p>
                   </div>
 
@@ -134,7 +134,7 @@ render() {
             </div>
 
             <div className="relative inline-block ml-4">
-              <img src={fu} className="h-12 w-12 rounded-full" alt="Profile" />
+              <img src={fu} className="h-12 w-12 rounded-full" alt="Profile2" />
               <button type="button" className="absolute top-0 right-0 mb-5 ml-4 bg-white rounded-full p-1 text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset">
                 <svg className="h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -144,7 +144,7 @@ render() {
 
            
             <div className="relative inline-block ml-4">
-              <img src={Pun} className="h-12 w-12 rounded-full" alt="Profile" />
+              <img src={Pun} className="h-12 w-12 rounded-full" alt="Profile3" />
               <button type="button" className="absolute top-0 right-0 mb-5 ml-4 bg-white rounded-full p-1 text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset">
                 <svg className="h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -154,7 +154,7 @@ render() {
 
            
             <div className="relative inline-block ml-4">
-              <img src={arty} className="h-12 w-12 rounded-full" alt="Profile" />
+              <img src={arty} className="h-12 w-12 rounded-full" alt="Profile4" />
               <button type="button" className="absolute top-0 right-0 mb-5 ml-4 bg-white rounded-full p-1 text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset">
                 <svg className="h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -164,7 +164,7 @@ render() {
 
            
             <div className="relative inline-block ml-4">
-              <img src={tt} className="h-12 w-12 rounded-full" alt="Profile" />
+              <img src={tt} className="h-12 w-12 rounded-full" alt="Profile5" />
               <button type="button" className="absolute top-0 right-0 mb-5 ml-4 bg-white rounded-full p-1 text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset">
                 <svg className="h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
