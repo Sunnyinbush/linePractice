@@ -17,8 +17,8 @@ function Body({ picture, picture2, picture3, picture4, picture5}) {
   const [name, setName] = useState('');
   const [userLineID, setUserLineID] = useState('');
   const [pictureUrl, setPictureUrl] = useState('');
+  const [done,setDone] = useState('0')
   
-  console.log(picture.length)
   useEffect(() => {
     const initLine = async () => {
       try {
@@ -109,6 +109,18 @@ function Body({ picture, picture2, picture3, picture4, picture5}) {
     else{
       clearInterval(interval);
       liff.closeWindow();
+      setDone(1);
+      try{
+        const endGame ={
+          function: done,
+          answers_data: [1,2,3,4,5]
+        };
+         const end = axios.post('cd0b-/api/liff/game',endGame);
+         console.log(end.data);
+      }catch(error){
+        throw error;
+      }
+    
     }
   
     // Clear the orange border
