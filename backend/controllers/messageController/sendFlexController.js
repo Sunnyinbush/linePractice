@@ -47,35 +47,30 @@ const sendFlexMessage = async (req, res) => {
             "text": "สวัดดี! กินอะไรดีเข้ามาช่วยทุกคนในกลุ่มแล้ว!"
           },
           {
-            "type": "flex",
-            "altText": "This is a Flex Message",
-            "contents": {
-              "type": "carousel",
-              "contents": [
+            "type": "template",
+            "altText": "this is a image carousel template",
+            "template": {
+              "type": "image_carousel",
+              "columns": [
                 {
-                  "type": "bubble",
-                  "hero": {
-                    "type": "image",
-                    "url": "https://i.imgur.com/1ZQ2Z9M.jpg",
-                    "size": "full",
-                    "aspectRatio": "rectangle",
-                    "aspectMode": "cover"
+                  "imageUrl": "https://i.imgur.com/1ZQ2Z9M.jpg",
+                  "action": {
+                    "type": "message",
+                    "text": "กินอะไรดี"
                   }
                 },
                 {
-                  "type": "bubble",
-                  "hero": {
-                    "type": "image",
-                    "url": "https://i.imgur.com/1ZQ2Z9M.jpg",
-                    "size": "full",
-                    "aspectRatio": "rectangle",
-                    "aspectMode": "cover"
+                  "imageUrl": "https://i.imgur.com/1ZQ2Z9M.jpg",
+                  "action": {
+                    "type": "message",
+                    "text": "คืออะไร"
                   }
                 }
               ]
+            }
           }
-        }
       ]
+      
       await client.replyMessage(event.replyToken, message);
     }
   }
