@@ -7,10 +7,43 @@ import Urchoice from './game/urchoice';
 import Urchoice2 from './game/urchoice2';
 import Game from './game';
 
-const liff = window.liff;
+// const liff = window.liff;
+
+class App extends Component {
+  // constructor(props) {
+  //   super(props);
+
+  //   this.state = {
+  //     name: '',
+  //     userLineID: '',
+  //     pictureUrl: '',
+  //     lineLiffId: '1657442367-op7nlxeV`',
+  //     gameLiffId: '1657442367-JL8n6BYl',
+  //   };
+  // }
+
+  // componentDidMount = async() => {
+  //   await liff.init({ liffId: this.state.lineLiffId }).catch(err=>{throw err});
+  //   if (liff.isLoggedIn()) {
+  //     let getProfile = await liff.getProfile();
+  //     this.setState({
+  //       name: getProfile.displayName,
+  //       userLineID: getProfile.userId,
+  //       pictureUrl: getProfile.pictureUrl,
+  //     });
+  //   }else{
+  //     liff.login();
+  //   }
+  // }
 
 
 
+
+
+  render() {
+    // const { lineLiffId, gameLiffId } = this.state;
+    return (
+      <Router>
 export default function App() {
   return (
     <div>
@@ -21,6 +54,7 @@ export default function App() {
               <Line />
             </Route>
             <Route path="/userinput" >
+              <Userinput  />
               <Userinput />
             </Route>
             <Route path="/userinput2">

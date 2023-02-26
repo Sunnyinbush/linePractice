@@ -43,6 +43,7 @@ render() {
   
   return (
     <div >
+    <div className='overflow-y-auto h-[400px] lg:h-[650px]' >
         <div className='justify-center pb-4' >
 
             <img  src={Logo} className=' h-[30px] w-35 mx-8 mt-10  ' alt={Logo}/>
@@ -51,7 +52,7 @@ render() {
             <SearchComponent/>
     
 
-    
+            
             <div className="flex items-center mb-4 mt-4">
 
             <input type="checkbox" className="w-6 h-6 rounded-full bg-G text-krd mx-5" checked />
@@ -62,7 +63,7 @@ render() {
              </div>
 
              <hr className='w-[70%] ml-[20%]'/>
-
+            
              <div className="flex items-center mb-4 mt-4">
 
               <input type="checkbox" className="w-6 h-6 rounded-full bg-G text-krd mx-5"  checked/>
@@ -104,9 +105,17 @@ render() {
 
                 <hr className='w-[70%] ml-[20%]'/>
 
+                <div className="flex items-center mb-4 mt-4">
 
+                  <input type="checkbox" className="w-6 h-6 rounded-full bg-G text-krd mx-5" checked />
 
+                    <img  src={tt}  className='h-[43px] inline-flex rounded-[300px] mr-3'></img>
+                    <p className='mr-10  text-[16px]'>Tt</p>
+                  </div>
 
+                  <hr className='w-[70%] ml-[20%]'/>
+
+                  </div>
 
 
 

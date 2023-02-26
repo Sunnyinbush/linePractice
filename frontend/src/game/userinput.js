@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react';
 import location from '../image/location.svg'
 import next from '../image/next.svg'
 import './main.css';
@@ -11,8 +12,21 @@ import { useState } from 'react';
 
 import axios from 'axios';
 
-export default function Userinput() {
 
+export default function Userinput(props) {
+  const [locations, setLocations] = useState('สีลม');
+  async function handleClick() {
+  try{
+    await liff.init({ liffId: props.liffId }); // initialize LIFF
+    const profile = await liff.getProfile();
+    console.log("message sent");
+  } catch (error) {
+    console.log("error", error);
+  } finally {
+    await liff.closeWindow(); // close the LIFF window
+  }
+}
+ // get user profile
 
 
   
@@ -82,8 +96,8 @@ export default function Userinput() {
             <p  className='mr-11 text-blue'>สถานที่</p>
           </div>
           <div className="search mt-2">
-          <input className=" appearance-none bg-darkyel border rounded-xl w-full py-2 px-3 text-krd leading-tight focus:outline-none focus:shadow-outline placeholder-krd" id="username" type="text" placeholder={locations} disabled/>
-          
+          <input className=" appearance-none bg-darkyel border rounded-xl w-full py-2 px-3 text-krd leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder={locations} disabled/>
+            <input className="mt-[5px] appearance-none bg-darkyel border rounded-xl w-full py-2 px-3 text-krd leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Location"/>
           </div>
         </div>
         <button className="bg-krd hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-[12px] w-20 h-10 inline-flex items-center mt-4"  onClick={handleClick}>
