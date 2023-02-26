@@ -44,6 +44,10 @@ class App extends Component {
     // const { lineLiffId, gameLiffId } = this.state;
     return (
       <Router>
+export default function App() {
+  return (
+    <div>
+       <Router>
         <div className="App">
           <Switch>
             <Route exact path="/">
@@ -51,6 +55,7 @@ class App extends Component {
             </Route>
             <Route path="/userinput" >
               <Userinput  />
+              <Userinput />
             </Route>
             <Route path="/userinput2">
               <Userinput2 />
@@ -67,8 +72,6 @@ class App extends Component {
           </Switch>
         </div>
       </Router>
-    );
-  }
+    </div>
+  )
 }
-
-export default App;
