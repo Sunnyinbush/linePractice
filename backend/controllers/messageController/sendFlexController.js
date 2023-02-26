@@ -39,8 +39,44 @@ const sendFlexMessage = async (req, res) => {
         // Send the Flex message to the user
         await client.replyMessage(event.replyToken, message);
       }
-    } else if (event.type === 'join'){
-      await client.replyMessage(event.replyToken, { type: 'text', text: 'สวัดดี! ลองพิมพ์คำว่า กินอะไรดี ดูสิ'});
+    } else if (event.type === 'join' && event.source.type === 'group'){
+      const message = 
+        [
+          {
+            "type": "text",
+            "text": "สวัดดี! กินอะไรดีเข้ามาช่วยทุกคนในกลุ่มแล้ว!"
+          },
+          {
+            "type": "flex",
+            "altText": "This is a Flex Message",
+            "contents": {
+              "type": "carousel",
+              "contents": [
+                {
+                  "type": "bubble",
+                  "hero": {
+                    "type": "image",
+                    "url": "https://i.imgur.com/1ZQ2Z9M.jpg",
+                    "size": "full",
+                    "aspectRatio": "rectangle",
+                    "aspectMode": "cover"
+                  }
+                },
+                {
+                  "type": "bubble",
+                  "hero": {
+                    "type": "image",
+                    "url": "https://i.imgur.com/1ZQ2Z9M.jpg",
+                    "size": "full",
+                    "aspectRatio": "rectangle",
+                    "aspectMode": "cover"
+                  }
+                }
+              ]
+          }
+        }
+      ]
+      await client.replyMessage(event.replyToken, message);
     }
   }
   res.sendStatus(200);

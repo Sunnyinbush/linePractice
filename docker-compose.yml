@@ -29,18 +29,3 @@ services:
     volumes:
       - ./frontend:/app
       - /app/node_modules
-
-  sqldb:
-    container_name: sqldb
-    image: postgres:alpine
-    environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: db
-    ports:
-      - "5432:5432"
-    volumes:
-      - sqldb_data:/var/lib/postgresql/data
-
-volumes:
-  sqldb_data:
