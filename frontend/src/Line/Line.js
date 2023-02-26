@@ -12,7 +12,6 @@ import liff from '@line/liff/dist/lib';
 
 class Line extends Component {
 
-
   constructor(props) {
     super(props);
 
