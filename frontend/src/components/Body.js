@@ -17,7 +17,7 @@ function Body({ picture, picture2, picture3, picture4, picture5}) {
   const [name, setName] = useState('');
   const [userLineID, setUserLineID] = useState('');
   const [pictureUrl, setPictureUrl] = useState('');
-  const [done,setDone] = useState('0')
+  // const [done,setDone] = useState('0')
   
   useEffect(() => {
     const initLine = async () => {
@@ -28,10 +28,15 @@ function Body({ picture, picture2, picture3, picture4, picture5}) {
           setName(getProfile.displayName);
           setUserLineID(getProfile.userId);
           setPictureUrl(getProfile.pictureUrl);
-          
+          const message = {
+            groupId : 'C29a0bbf62743fb10aaa004df79e67fcd',
+            userId: userLineID,
+            gameResult: [1,2,3,4]
+          }
+          console.log(message)
           // Send POST request with userLineID
-          const response = await axios.post('/api/liff/game', { userLineID });
-          console.log(response.data);
+          //const response = await axios.post('https://78c9-49-237-39-230.ap.ngrok.io/api/liff/game', { message });
+          //console.log(response.data);
           
         } else {
           liff.login();
@@ -109,13 +114,14 @@ function Body({ picture, picture2, picture3, picture4, picture5}) {
     else{
       clearInterval(interval);
       liff.closeWindow();
-      setDone(1);
+      // setDone(1);
       try{
         const endGame ={
-          function: done,
-          answers_data: [1,2,3,4,5]
-        };
-         const end = axios.post('cd0b-/api/liff/game',endGame);
+          "functionName": "finishGame",
+          "userId": userLineID,
+          "groupId": "C29a0bbf62743fb10aaa004df79e67fcd"
+      };
+         const end = axios.post('https://78c9-49-237-39-230.ap.ngrok.io/webhook',endGame);
          console.log(end.data);
       }catch(error){
         throw error;
