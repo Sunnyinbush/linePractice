@@ -181,7 +181,7 @@ const finishGame = async (req, res) => {
       console.log(count)
       const message = {
         type: 'text',
-        text: `ยินดีด้วย ${username} เล่นเกมเสร็จเป็นที่ ${count1}!`,
+        text: `ยินดีด้วย ${username} เล่นเกมเสร็จเป็นที่ ${count1} ถ้าเล่นหมดแล้วพิมพ์ จบเกม มาด้วยนะ! `,
       };
       // Send the Flex message to the group
       const submitted = await client.pushMessage(groupId, message);

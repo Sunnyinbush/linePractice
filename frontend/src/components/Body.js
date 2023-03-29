@@ -121,7 +121,7 @@ function Body({ picture, picture2, picture3, picture4, picture5}) {
           "userId": userLineID,
           "groupId": "C29a0bbf62743fb10aaa004df79e67fcd"
       };
-         const end = axios.post('https://78c9-49-237-39-230.ap.ngrok.io/webhook',endGame);
+         const end = axios.post('https://8189-161-200-191-206.ap.ngrok.io/webhook',endGame);
          console.log(end.data);
       }catch(error){
         throw error;

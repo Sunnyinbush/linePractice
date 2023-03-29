@@ -45,7 +45,7 @@ export default function Userinput(props) {
           "selectedBudget": 0,
           "selectedLocation": "MBK Center"
         };
-        return axios.post("https://33d1-2001-44c8-4208-3384-298c-b495-83bb-436b.ap.ngrok.io/api/liff/line-group", userdata);
+        return axios.post("https://8189-161-200-191-206.ap.ngrok.io/api/liff/line-group", userdata);
       })
       .then((response1) => {
         console.log(response1);
@@ -53,7 +53,7 @@ export default function Userinput(props) {
           "ownerId" : this.ownerid,
           "functionName": "startGame",
         }
-        return axios.post("https://33d1-2001-44c8-4208-3384-298c-b495-83bb-436b.ap.ngrok.io/webhook", gameData);
+        return axios.post("https://8189-161-200-191-206.ap.ngrok.io/webhook", gameData);
       })
       .then((response2) => {
         console.log(response2);
