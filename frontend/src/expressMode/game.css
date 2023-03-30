@@ -1,0 +1,32 @@
+.timer{
+    border-radius: 100%;
+  }
+  .circle{
+    background-color: #777CB6;
+    border-radius: 100%;
+    /* height: 40px;
+    width: 40px; */
+    position: relative;
+    bottom: 10px;
+    
+    
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+    body {
+        background-color: rgba(252, 252, 254, 1)    ;
+        font-family: 'Kanit', sans-serif;
+    }
+
+
+
+
+.tracker{
+    position: relative;
+    background: red;
+}

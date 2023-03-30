@@ -1,15 +1,15 @@
 import React from 'react'
-import mainLogo from'../image/KrD_log.svg';
-import topimg from '../image/top_image.png';
+import mainLogo from'./image/KrD_log.svg';
+import topimg from './image/top_image.png';
 
-import location from '../image/location.svg'
+import location from './image/location.svg'
 
-import next from '../image/next.svg'
+import next from './image/next.svg'
 import './main.css';
 
 import Foot from './f1Component/foot'
 import { Link } from 'react-router-dom';
-import TimeSlide from '../expressMode/timeslider';
+import TimeSlide from './f1Component/timeslider';
 import Priceslider from './f1Component/priceslider';
 
 

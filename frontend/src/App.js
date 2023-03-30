@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import React from 'react';
-import Userinput from './expressMode/userinput';
-import Userinput2 from './expressMode/userinput2';
+import Userinput from './startGame/userinput';
+import Userinput2 from './expressMode/userinput2.js';
 import Line from './Line/Line';
 import Urchoice from './startGame/urchoice';
-import Urchoice2 from './expressMode/urchoice2';
+import Urchoice2 from './startGame/urchoice2';
 import Game from './expressMode/game';
 
 // const liff = window.liff;

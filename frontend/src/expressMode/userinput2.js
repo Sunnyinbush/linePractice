@@ -1,11 +1,11 @@
 import React from 'react'
 import liff from "@line/liff";
-import Img from '../image/img.svg'
-import './main.css';
+import Img from './image/img.svg'
+import './game.css';
 import { Link } from 'react-router-dom';
 import { Component } from 'react';
-import Toppage from './toppage';
-import Foot from './foot'
+import Toppage from '../startGame/f1Component/toppage.js';
+import Foot from '../startGame/f1Component/foot'
 
 class Userinput2 extends Component {
   constructor(props) {

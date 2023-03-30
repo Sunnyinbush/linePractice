@@ -1,13 +1,13 @@
 import React, { Component }  from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../image/KrD_log2.svg';
+import Logo from '../startGame/image/KrD_log2.svg';
 import SearchComponent from './search';
-import fu from '../image/fu.png'
-import all from '../image/all.svg'
-import kao from '../image/Kao.png'
-import arty from '../image/Art.png'
-import Pun from '../image/Pun.png'
-import tt from '../image/tt.png'
+import fu from '../startGame/profilePic/fu.png'
+import all from '../startGame/profilePic/all.svg'
+import kao from '../startGame/profilePic//Kao.png'
+import arty from '../startGame/profilePic/Art.png'
+import Pun from '../startGame/profilePic/Pun.png'
+import tt from '../startGame/profilePic/tt.png'
 import liff from '@line/liff/dist/lib';
 
 class Line extends Component {

@@ -1,13 +1,13 @@
 import React from 'react'
 import { useState } from 'react';
-import location from '../image/location.svg'
-import next from '../image/next.svg'
+import location from './image/location.svg'
+import next from './image/next.svg'
 import './main.css';
 import liff from '@line/liff';
-import Toppage from './toppage';
-import TimeSlide from './timeslider';
-import Priceslider from './priceslider';
-import Foot from './foot';
+import Toppage from './f1Component/toppage';
+import TimeSlide from './f1Component/timeslider';
+import Priceslider from './f1Component/priceslider';
+import Foot from './f1Component/foot';
 
 
 import axios from 'axios';

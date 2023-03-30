@@ -1,6 +1,8 @@
 import React from 'react'
-import mainLogo from'../image/KrD_log.svg';
-import topimg from '../image/top_image.png';
+import mainLogo from'./image/KrD_log.svg';
+import topimg from './image/top_image.png';
+
+
 import { Link } from 'react-router-dom';
 
 

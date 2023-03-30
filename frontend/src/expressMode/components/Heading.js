@@ -1,5 +1,5 @@
 import React from "react";
-import profileImage from "./image/Profile.png";
+import profileImage from '../image/Profile.png';
 
 function Heading() {
   return (
