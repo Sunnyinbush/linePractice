@@ -16,6 +16,7 @@ const sendFlexMessage = async (req, res) => {
   const { events } = req.body;
   for (let i = 0; i < events.length; i++) {
     const event = events[i];
+    console.log(event.type);
     if (event.type === 'message' && event.message.type === 'text' && (event.message.text === 'กินไรดี' || event.message.text === 'กินอะไรดี')) {
       if (event.source.type === 'group') {
         // Construct the Flex message object using the retrieved data
@@ -144,6 +145,7 @@ const startGame = async (req, res) => {
   count += 1;
   // Change the Flex message object using the retrieved data
   const profile = await client.getProfile(req.body.ownerId);
+  console.log(profile);
   const username = profile.displayName;
   flexMessageData.startgroupflex.header.contents[0].text = `${username} สร้างเกมแล้ว!`;
 /*   const currentlist = event.memberList;

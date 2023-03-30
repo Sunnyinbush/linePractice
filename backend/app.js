@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const flexMessageRoutes = require('./routers/messageRouters/sendflexRoute');
+const flexMessageRoutes = require('./routers/messageRouters/sendFlexRoute');
 const liffRoute = require('./routers/liffRouters/liffRouter')
-const port = process.env.PORT || 9000;
+const port = process.env.PORT || 4000;
 const cors = require('cors');
 
 app.use(cors());
