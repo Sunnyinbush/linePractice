@@ -7,10 +7,10 @@ import location from '../image/location.svg'
 import next from '../image/next.svg'
 import './main.css';
 
-import Foot from './foot'
+import Foot from './f1Component/foot'
 import { Link } from 'react-router-dom';
-import TimeSlide from './timeslider';
-import Priceslider from './priceslider';
+import TimeSlide from '../expressMode/timeslider';
+import Priceslider from './f1Component/priceslider';
 
 
 

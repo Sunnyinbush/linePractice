@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import React from 'react';
 import './App.css';
-import Heading from "./components/Heading.js";
-import Progress from './components/progress';
-import Body from './components/Body';
-import PageTag from './components/page_tab';
+import Heading from "../components/Heading.js";
+import Progress from '../components/progress';
+import Body from '../components/Body';
+import PageTag from '../components/page_tab';
 import chineseFood from './components/image/Pics/chinese.jpg';
 import chineseFood2 from './components/image/Pics/chinese-food2.jpg';
 import foerign1 from './components/image/Pics/foerign1.jpg';
@@ -29,18 +29,12 @@ import wifi from './components/image/additional/wifi.jpeg';
 import parking from './components/image/additional/parking.jpeg';
 
 function Game() {
-
-   
-   
     const foodType = [foerign1,chineseFood2,japanese,italian,tarmSung,onePlate,dimSum,steak,wine,pub,roofTop,cafe,couple,family,business,friends,wifi,parking,alcohol, creditCard];
     // const serve = [tarmSung,onePlate,dimSum,steak];
     // const vibe = [wine,pub,roofTop,cafe];
     // const who = [couple,family,business,friends];
     // const addOn = [wifi,parking,alcohol, creditCard];
-    
-    // const picAll = foodType + serve + vibe + who + addOn;
-
-
+    // const picAll = foodType + serve + vibe + who + addOn
     
   return (
     
