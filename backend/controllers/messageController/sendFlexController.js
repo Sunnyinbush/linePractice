@@ -73,6 +73,15 @@ const sendFlexMessage = async (req, res) => {
       
       await client.replyMessage(event.replyToken, message);
     }
+    else if (event.type === 'message' && event.message.type === 'text' && event.message.text === 'จบเกม'){
+      const message = {
+        type: 'flex',
+        altText: 'This is a Flex Message',
+        contents: flexMessageData['restaurantflex'],
+      }
+      groupId = event.groupId;
+      await client.pushMessage(groupId, message);
+    }
   }
   res.sendStatus(200);
 };
@@ -138,6 +147,7 @@ const endGame = async (req, res) => {
 
 let count = 0;
 const startGame = async (req, res) => {
+  console.log("called start game")
   const events = getData;
   const eventsUser = await events.getGameState();
   const event = eventsUser[count];

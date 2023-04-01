@@ -1,334 +1,385 @@
 {
-    "gameState" : [
+  "gameState": [
+    {
+      "id": 1,
+      "ownerid": "Ua88a68ffeefa6bf11ca5115bd0f221a1",
+      "gameId": 1,
+      "groupId": "C29a0bbf62743fb10aaa004df79e67fcd",
+      "memberList": [
+        "U5fa42a05ec532c25481e27bba36a5974",
+        "Ucf9ec7f00586024466abf3868e307206",
+        "U26fd8abf5bdf6a99ce45c03a0679e204",
+        "Ue4572e769d5070cbfda0667831ab4f97",
+        "Ua88a68ffeefa6bf11ca5115bd0f221a1"
+      ],
+      "finishedCount": 0,
+      "selectedTime": 0,
+      "selectedBudget": 0,
+      "selectedLocation": "สีลม",
+      "type": "endGame",
+      "gameResult": [
         {
-            "id": 1,
-            "ownerid": "Ua88a68ffeefa6bf11ca5115bd0f221a1",
-            "gameId": 1,
-            "groupId": "C29a0bbf62743fb10aaa004df79e67fcd",
-            "memberList": [
-              "U5fa42a05ec532c25481e27bba36a5974",
-              "Ucf9ec7f00586024466abf3868e307206",
-              "U26fd8abf5bdf6a99ce45c03a0679e204",
-              "Ue4572e769d5070cbfda0667831ab4f97",
-              "Ua88a68ffeefa6bf11ca5115bd0f221a1"
-            ],
-            "finishedCount": 0,
-            "selectedTime": 0,
-            "selectedBudget": 0,
-            "selectedLocation": "สีลม",
-            "type": "endGame",
-            "gameResult": [
-              {
-                "page": 1,
-                "picturechoose": [
-                  1,
-                  1,
-                  1,
-                  2,
-                  2
-                ]
-              },
-              {
-                "page": 2,
-                "picturechoose": [
-                  1,
-                  2,
-                  2,
-                  3,
-                  2
-                ]
-              },
-              {
-                "page": 3,
-                "picturechoose": [
-                  1,
-                  1,
-                  3,
-                  1,
-                  3
-                ]
-              },
-              {
-                "page": 4,
-                "picturechoose": [
-                  3,
-                  3,
-                  4,
-                  3,
-                  4
-                ]
-              },
-              {
-                "page": 5,
-                "picturechoose": [
-                  2,
-                  2,
-                  2,
-                  1,
-                  1
-                ]
-              }
-            ],
-            "totalPoints": [
-              1,
-              2,
-              1,
-              3,
-              2
-            ]
-          },
-          {
-            "id": 2,
-            "ownerid": "Ua88a68ffeefa6bf11ca5115bd0f221a1",
-            "gameId": 2,
-            "groupId": "C29a0bbf62743fb10aaa004df79e67fcd",
-            "memberList": [
-              "U5fa42a05ec532c25481e27bba36a5974",
-              "Ucf9ec7f00586024466abf3868e307206",
-              "U26fd8abf5bdf6a99ce45c03a0679e204",
-              "Ue4572e769d5070cbfda0667831ab4f97",
-              "Ua88a68ffeefa6bf11ca5115bd0f221a1"
-            ],
-            "selectedTime": 0,
-            "selectedBudget": 0,
-            "selectedLocation": "สีลม",
-            "type": "endGame",
-            "gameResult": [
-              {
-                "page": 1,
-                "picturechoose": [
-                  2,
-                  4,
-                  1,
-                  2,
-                  1
-                ]
-              },
-              {
-                "page": 2,
-                "picturechoose": [
-                  3,
-                  2,
-                  4,
-                  4,
-                  1
-                ]
-              },
-              {
-                "page": 3,
-                "picturechoose": [
-                  1,
-                  4,
-                  1,
-                  1,
-                  4
-                ]
-              },
-              {
-                "page": 4,
-                "picturechoose": [
-                  2,
-                  1,
-                  4,
-                  3,
-                  3
-                ]
-              },
-              {
-                "page": 5,
-                "picturechoose": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  1
-                ]
-              }
-            ],
-            "totalPoints": [
-              2,
-              4,
-              1,
-              3,
-              1
-            ]
-          },
-          {
-            "id": 3,
-            "ownerid": "Ua88a68ffeefa6bf11ca5115bd0f221a1",
-            "gameId": 3,
-            "groupId": "C29a0bbf62743fb10aaa004df79e67fcd",
-            "memberList": [
-              "U5fa42a05ec532c25481e27bba36a5974",
-              "Ucf9ec7f00586024466abf3868e307206",
-              "U26fd8abf5bdf6a99ce45c03a0679e204",
-              "Ue4572e769d5070cbfda0667831ab4f97",
-              "Ua88a68ffeefa6bf11ca5115bd0f221a1"
-            ],
-            "selectedTime": 0,
-            "selectedBudget": 0,
-            "selectedLocation": "สีลม",
-            "type": "endGame",
-            "gameResult": [
-              {
-                "page": 1,
-                "picturechoose": [
-                  3,
-                  2,
-                  3,
-                  4,
-                  1
-                ]
-              },
-              {
-                "page": 2,
-                "picturechoose": [
-                  1,
-                  4,
-                  3,
-                  2,
-                  1
-                ]
-              },
-              {
-                "page": 3,
-                "picturechoose": [
-                  2,
-                  2,
-                  2,
-                  3,
-                  1
-                ]
-              },
-              {
-                "page": 4,
-                "picturechoose": [
-                  4,
-                  1,
-                  1,
-                  1,
-                  2
-                ]
-              },
-              {
-                "page": 5,
-                "picturechoose": [
-                  2,
-                  3,
-                  4,
-                  1,
-                  4
-                ]
-              }
-            ],
-            "totalPoints": [
-              3,
-              1,
-              2,
-              1,
-              4
-            ]
-          }
-    ],
-    "restaurantData" : [
+          "page": 1,
+          "picturechoose": [
+            1,
+            1,
+            1,
+            2,
+            2
+          ]
+        },
         {
-            "choice": [
-              1,
-              2,
-              1,
-              3,
-              2
-            ],
-            "data": [
-              {
-                "photolink": "https://iili.io/HM69NHl.jpg",
-                "placetitle": "Aesop`s Greek Restaurant Silom",
-                "placelocation": "สีลม",
-                "opentime": "16:00-21:00",
-                "maplink": "https://goo.gl/maps/wcVYYmtjqEE8ob8R7",
-                "wongnai": "https://www.wongnai.com/r/335284Wf",
-                "videolink": "https://streamable.com/9zhtvl",
-                "rating": "4.4/5",
-                "classification": "อาหารนานาชาติ"
-              },
-              {
-                "photolink": "https://iili.io/HM69jS4.jpg",
-                "placetitle": "Sirocco Lebua at State Tower",
-                "placelocation": "สีลม",
-                "opentime": "18:00-23:00",
-                "maplink": "https://goo.gl/maps/fbSnv1SmvBn8mzsWA",
-                "wongnai": "https://www.wongnai.com/r/sirocco",
-                "videolink": "https://streamable.com/o4b3uq",
-                "rating": "4.1/5",
-                "classification": "อาหารนานาชาติ"
-              }
-            ]
-          },
-          {
-            "choice": [
-              2,
-              4,
-              1,
-              3,
-              1
-            ],
-            "data": [
-              {
-                "photolink": "https://iili.io/HM69VPs.jpg",
-                "placetitle": "ภัตตาคาร แกรนด์เชียง การีล่า",
-                "placelocation": "สีลม",
-                "opentime": "09:00 - 20:00",
-                "maplink": "https://goo.gl/maps/YEeQREs4tNGn6xND8",
-                "wongnai": "https://www.wongnai.com/r/shangarila",
-                "videolink": "https://streamable.com/24gtcl",
-                "rating": "4.0/5",
-                "classification": "อาหารจีน"
-              },
-              {
-                "photolink": "https://iili.io/HM69MVn.jpg",
-                "placetitle": "26Braised Beef Yih Sahp Luhk",
-                "placelocation": "สีลม",
-                "opentime": "10:00-20:00",
-                "maplink": "https://goo.gl/maps/bGp1NTfJ6g6wrZs56",
-                "wongnai": "https://www.wongnai.com/r/642610ME",
-                "videolink": "https://streamable.com/xh4iig",
-                "rating": "4.1/5",
-                "classification": "อาหารจีน"
-              }
-            ]
-          },
-          {
-            "choice": [
-              3,
-              1,
-              2,
-              1,
-              4
-            ],
-            "data": [
-              {
-                "photolink": "https://iili.io/HM69hlf.jpg",
-                "placetitle": "Teppen",
-                "placelocation": "สีลม",
-                "opentime": "จันทร์：17:00-23:00，อังคาร-อาทิตย์: 11:00-23:00",
-                "maplink": "https://goo.gl/maps/xq5XPt9KadRvekcw9",
-                "wongnai": "https://www.wongnai.com/r/291969JI",
-                "videolink": "https://streamable.com/1g9egz",
-                "rating": "4.2/5",
-                "classification": "อาหารญี่ปุ่น"
-              },
-              {
-                "photolink": "https://iili.io/HM69XKG.jpg",
-                "placetitle": "เฟรดดี้ ข้าวแกงกะหรี่",
-                "placelocation": "สีลม",
-                "opentime": "11:00-21:00",
-                "maplink": "https://goo.gl/maps/z5msUm1BS6YUxU5g6",
-                "wongnai": "https://www.wongnai.com/r/594716oY",
-                "videolink": "https://streamable.com/2jthtd",
-                "rating": "4.2/5",
-                "classification": "อาหารญี่ปุ่น"
-              }
-            ]
-          }
-    ]
+          "page": 2,
+          "picturechoose": [
+            1,
+            2,
+            2,
+            3,
+            2
+          ]
+        },
+        {
+          "page": 3,
+          "picturechoose": [
+            1,
+            1,
+            3,
+            1,
+            3
+          ]
+        },
+        {
+          "page": 4,
+          "picturechoose": [
+            3,
+            3,
+            4,
+            3,
+            4
+          ]
+        },
+        {
+          "page": 5,
+          "picturechoose": [
+            2,
+            2,
+            2,
+            1,
+            1
+          ]
+        }
+      ],
+      "totalPoints": [
+        1,
+        2,
+        1,
+        3,
+        2
+      ]
+    },
+    {
+      "id": 2,
+      "ownerid": "Ua88a68ffeefa6bf11ca5115bd0f221a1",
+      "gameId": 2,
+      "groupId": "C29a0bbf62743fb10aaa004df79e67fcd",
+      "memberList": [
+        "U5fa42a05ec532c25481e27bba36a5974",
+        "Ucf9ec7f00586024466abf3868e307206",
+        "U26fd8abf5bdf6a99ce45c03a0679e204",
+        "Ue4572e769d5070cbfda0667831ab4f97",
+        "Ua88a68ffeefa6bf11ca5115bd0f221a1"
+      ],
+      "selectedTime": 0,
+      "selectedBudget": 0,
+      "selectedLocation": "สีลม",
+      "type": "endGame",
+      "gameResult": [
+        {
+          "page": 1,
+          "picturechoose": [
+            2,
+            4,
+            1,
+            2,
+            1
+          ]
+        },
+        {
+          "page": 2,
+          "picturechoose": [
+            3,
+            2,
+            4,
+            4,
+            1
+          ]
+        },
+        {
+          "page": 3,
+          "picturechoose": [
+            1,
+            4,
+            1,
+            1,
+            4
+          ]
+        },
+        {
+          "page": 4,
+          "picturechoose": [
+            2,
+            1,
+            4,
+            3,
+            3
+          ]
+        },
+        {
+          "page": 5,
+          "picturechoose": [
+            1,
+            2,
+            3,
+            4,
+            1
+          ]
+        }
+      ],
+      "totalPoints": [
+        2,
+        4,
+        1,
+        3,
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "ownerid": "Ua88a68ffeefa6bf11ca5115bd0f221a1",
+      "gameId": 3,
+      "groupId": "C29a0bbf62743fb10aaa004df79e67fcd",
+      "memberList": [
+        "U5fa42a05ec532c25481e27bba36a5974",
+        "Ucf9ec7f00586024466abf3868e307206",
+        "U26fd8abf5bdf6a99ce45c03a0679e204",
+        "Ue4572e769d5070cbfda0667831ab4f97",
+        "Ua88a68ffeefa6bf11ca5115bd0f221a1"
+      ],
+      "selectedTime": 0,
+      "selectedBudget": 0,
+      "selectedLocation": "สีลม",
+      "type": "endGame",
+      "gameResult": [
+        {
+          "page": 1,
+          "picturechoose": [
+            3,
+            2,
+            3,
+            4,
+            1
+          ]
+        },
+        {
+          "page": 2,
+          "picturechoose": [
+            1,
+            4,
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "page": 3,
+          "picturechoose": [
+            2,
+            2,
+            2,
+            3,
+            1
+          ]
+        },
+        {
+          "page": 4,
+          "picturechoose": [
+            4,
+            1,
+            1,
+            1,
+            2
+          ]
+        },
+        {
+          "page": 5,
+          "picturechoose": [
+            2,
+            3,
+            4,
+            1,
+            4
+          ]
+        }
+      ],
+      "totalPoints": [
+        3,
+        1,
+        2,
+        1,
+        4
+      ]
+    },
+    {
+      "gameId": 2,
+      "groupId": "C29a0bbf62743fb10aaa004df79e67fcd",
+      "memberList": [
+        {
+          "ownerid": "Ua88a68ffeefa6bf11ca5115bd0f221a1"
+        },
+        "Ucf9ec7f00586024466abf3868e307206",
+        "Ucf9ec7f00586024466abf3868e307206",
+        "Ue4572e769d5070cbfda0667831ab4f97",
+        "Ua88a68ffeefa6bf11ca5115bd0f221a1"
+      ],
+      "selectedTime": 0,
+      "selectedBudget": 0,
+      "selectedLocation": "MBK Center",
+      "id": 4
+    },
+    {
+      "gameId": 2,
+      "groupId": "C29a0bbf62743fb10aaa004df79e67fcd",
+      "memberList": [
+        {
+          "ownerid": "Ua88a68ffeefa6bf11ca5115bd0f221a1"
+        },
+        "Ucf9ec7f00586024466abf3868e307206",
+        "Ucf9ec7f00586024466abf3868e307206",
+        "Ue4572e769d5070cbfda0667831ab4f97",
+        "Ua88a68ffeefa6bf11ca5115bd0f221a1"
+      ],
+      "selectedTime": 0,
+      "selectedBudget": 0,
+      "selectedLocation": "MBK Center",
+      "id": 5
+    },
+    {
+      "gameId": 2,
+      "groupId": "C29a0bbf62743fb10aaa004df79e67fcd",
+      "memberList": [
+        {
+          "ownerid": "Ua88a68ffeefa6bf11ca5115bd0f221a1"
+        },
+        "Ucf9ec7f00586024466abf3868e307206",
+        "Ucf9ec7f00586024466abf3868e307206",
+        "Ue4572e769d5070cbfda0667831ab4f97",
+        "Ua88a68ffeefa6bf11ca5115bd0f221a1"
+      ],
+      "selectedTime": 0,
+      "selectedBudget": 0,
+      "selectedLocation": "MBK Center",
+      "id": 6
+    }
+  ],
+  "restaurantData": [
+    {
+      "choice": [
+        1,
+        2,
+        1,
+        3,
+        2
+      ],
+      "data": [
+        {
+          "photolink": "https://iili.io/HM69NHl.jpg",
+          "placetitle": "Aesop`s Greek Restaurant Silom",
+          "placelocation": "สีลม",
+          "opentime": "16:00-21:00",
+          "maplink": "https://goo.gl/maps/wcVYYmtjqEE8ob8R7",
+          "wongnai": "https://www.wongnai.com/r/335284Wf",
+          "videolink": "https://streamable.com/9zhtvl",
+          "rating": "4.4/5",
+          "classification": "อาหารนานาชาติ"
+        },
+        {
+          "photolink": "https://iili.io/HM69jS4.jpg",
+          "placetitle": "Sirocco Lebua at State Tower",
+          "placelocation": "สีลม",
+          "opentime": "18:00-23:00",
+          "maplink": "https://goo.gl/maps/fbSnv1SmvBn8mzsWA",
+          "wongnai": "https://www.wongnai.com/r/sirocco",
+          "videolink": "https://streamable.com/o4b3uq",
+          "rating": "4.1/5",
+          "classification": "อาหารนานาชาติ"
+        }
+      ]
+    },
+    {
+      "choice": [
+        2,
+        4,
+        1,
+        3,
+        1
+      ],
+      "data": [
+        {
+          "photolink": "https://iili.io/HM69VPs.jpg",
+          "placetitle": "ภัตตาคาร แกรนด์เชียง การีล่า",
+          "placelocation": "สีลม",
+          "opentime": "09:00 - 20:00",
+          "maplink": "https://goo.gl/maps/YEeQREs4tNGn6xND8",
+          "wongnai": "https://www.wongnai.com/r/shangarila",
+          "videolink": "https://streamable.com/24gtcl",
+          "rating": "4.0/5",
+          "classification": "อาหารจีน"
+        },
+        {
+          "photolink": "https://iili.io/HM69MVn.jpg",
+          "placetitle": "26Braised Beef Yih Sahp Luhk",
+          "placelocation": "สีลม",
+          "opentime": "10:00-20:00",
+          "maplink": "https://goo.gl/maps/bGp1NTfJ6g6wrZs56",
+          "wongnai": "https://www.wongnai.com/r/642610ME",
+          "videolink": "https://streamable.com/xh4iig",
+          "rating": "4.1/5",
+          "classification": "อาหารจีน"
+        }
+      ]
+    },
+    {
+      "choice": [
+        3,
+        1,
+        2,
+        1,
+        4
+      ],
+      "data": [
+        {
+          "photolink": "https://iili.io/HM69hlf.jpg",
+          "placetitle": "Teppen",
+          "placelocation": "สีลม",
+          "opentime": "จันทร์：17:00-23:00，อังคาร-อาทิตย์: 11:00-23:00",
+          "maplink": "https://goo.gl/maps/xq5XPt9KadRvekcw9",
+          "wongnai": "https://www.wongnai.com/r/291969JI",
+          "videolink": "https://streamable.com/1g9egz",
+          "rating": "4.2/5",
+          "classification": "อาหารญี่ปุ่น"
+        },
+        {
+          "photolink": "https://iili.io/HM69XKG.jpg",
+          "placetitle": "เฟรดดี้ ข้าวแกงกะหรี่",
+          "placelocation": "สีลม",
+          "opentime": "11:00-21:00",
+          "maplink": "https://goo.gl/maps/z5msUm1BS6YUxU5g6",
+          "wongnai": "https://www.wongnai.com/r/594716oY",
+          "videolink": "https://streamable.com/2jthtd",
+          "rating": "4.2/5",
+          "classification": "อาหารญี่ปุ่น"
+        }
+      ]
+    }
+  ]
 }

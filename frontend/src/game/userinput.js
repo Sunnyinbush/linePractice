@@ -14,9 +14,6 @@ import axios from 'axios';
 
 
 export default function Userinput(props) {
-
-
-  
   const [locations, setLocations] = useState(["สีลม"]);
   function handleClick() {
     liff.init({ liffId: '1657442367-op7nlxeV' })
@@ -45,19 +42,16 @@ export default function Userinput(props) {
           "selectedBudget": 0,
           "selectedLocation": "MBK Center"
         };
-        return axios.post("https://33d1-2001-44c8-4208-3384-298c-b495-83bb-436b.ap.ngrok.io/api/liff/line-group", userdata);
+        //return axios.post("https://776f-161-200-190-201.ap.ngrok.io/api/liff/line-group", userdata);
       })
       .then((response1) => {
         console.log(response1);
+        console.log("Posting Start Game")
         const gameData = { 
-          "ownerId" : this.ownerid,
+          "ownerId" : "Ucf9ec7f00586024466abf3868e307206",
           "functionName": "startGame",
         }
-        return axios.post("https://33d1-2001-44c8-4208-3384-298c-b495-83bb-436b.ap.ngrok.io/webhook", gameData);
-      })
-      .then((response2) => {
-        console.log(response2);
-        //liff.closeWindow();
+        return axios.post("https://776f-161-200-190-201.ap.ngrok.io/webhook", gameData);
       })
       .catch((error) => {
         console.log('LIFF Error:', error);

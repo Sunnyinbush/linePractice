@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const flexMessageRoutes = require('./routers/messageRouters/sendflexRoute');
 const liffRoute = require('./routers/liffRouters/liffRouter')
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 4001;
 const cors = require('cors');
 
 app.use(cors());
